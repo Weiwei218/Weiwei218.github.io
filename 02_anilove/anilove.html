@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif&display=swap');
+
+        .main-header .item {
+            display: flex;
+            justify-content: space-between;
+            background-color: #272626;
+            padding: 25px 50px;
+        }
+
+        .main-header .phone {
+            display: flex;
+            color: #fff;
+            align-items: center;
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .main-header .phone i {
+            color: #FF9933;
+            margin: 0 10px;
+        }
+
+        .main-header .contact {
+            display: flex;
+        }
+
+        .main-header .contact .icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            background-color: #fff;
+            font-size: 60%;
+            margin: 0 2px;
+            transition: background-color .3s ease;
+        }
+
+        .main-header .contact .icon:hover {
+            background-color: #FF9933;
+        }
+
+        .main-header .container {
+            display: flex;
+            align-items: center;
+            padding: 20px 100px;
+            margin: auto;
+        }
+
+        .main-header .logo {
+            display: flex;
+            align-items: center;
+            width: 50px;
+        }
+
+        .main-header .brandName {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            text-decoration: none;
+            font-size: 50px;
+            color: #535353;
+            font-family: 'PT Serif', serif;
+            font-weight: bold;
+        }
+
+        .main-header .logo img {
+            max-width: 100%;
+        }
+
+        .main-header .main-nav {
+            margin: auto;
+        }
+
+        .main-header .main-nav a {
+            text-decoration: none;
+            padding: 20px;
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            color: black;
+            font-weight: 300;
+        }
+
+        .main-header .main-nav a:hover {
+            text-decoration: underline #FF9933;
+            ;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 3px;
+        }
+
+        .main-header .btn-donate {
+            border: 2px solid #FF9933;
+            color: #FF9933;
+            background-color: transparent;
+            padding: 13px 30px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Lato', sans-serif;
+            line-height: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color .3s ease;
+        }
+
+        .main-header .btn-donate:hover {
+            background-color: #7ABEE9;
+            color: white;
+            border-color: #7ABEE9;
+        }
+
+        .banner .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .banner .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .banner .item h2 {
+            font-size: 34px;
+            color: #535353;
+            margin-left: 20px;
+            position: absolute;
+            top: 110px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+        }
+
+        .banner .item h2 small {
+            font-size: 60px;
+            display: block;
+            color: #7ABEE9;
+            padding: 10px 0;
+        }
+
+        .banner .item p {
+            font-size: 24px;
+            font-weight: 400;
+            color: #535353;
+            position: absolute;            
+            top: 230px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            margin-left: 20px;
+        }
+
+        .banner .item img {
+            width: 100%;
+            z-index: -1;
+        }
+
+        .banner .btn-donate {
+            color: #fff;
+            background-color: #FF9933;
+            font-size: 13px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color .3s ease;
+            position: absolute;
+            top: 300px;
+            left: 20px;
+            padding: 20px 30px;
+            margin-left: 20px;
+            z-index: 1;
+        }
+
+        .banner .btn-donate:hover {
+            background-color: #000;
+        }
+
+        .about .container {
+            display: flex;
+        }
+
+        .about .item {
+            width: 50%;
+        }
+
+        .about .item img {
+            width: 100%;
+        }
+
+        .about .text {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about .text h2 {
+            font-size: 50px;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            color: #535353;
+        }
+
+        .about .text h3 {
+            font-size: 30px;
+            font-family: 'Lato', sans-serif;
+            color: #7ABEE9;
+            padding: 30px 0;
+        }
+
+        .about .text p {
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            color: #434F53;
+            padding: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        .about .btn-learn {
+            width: 180px;
+            color: #fff;
+            background-color: #FF9933;
+            margin-top: 20px;
+            padding: 25px 0;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            transition: background-color .3s ease;
+        }
+
+        .about .btn-learn:hover {
+            background-color: #000;
+        }
+
+        .help {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .help h2 {
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            color: #535353;
+            margin: auto;
+            padding: 50px 0 0;
+        }
+
+        .help h3 {
+
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Lato', sans-serif;
+            color: #7ABEE9;
+            padding: 10px 0;
+            margin: auto;
+        }
+
+        .help .wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .help .card-list {
+            width: 1200px;
+            display: flex;
+            padding: 30px 0;
+        }
+
+        .help .card {
+            width: 380px;
+            height: 100px;
+            margin: 10px;
+            text-align: center;
+            padding-top: 400px;
+            font-size: 34px;
+            font-family: 'Lato', sans-serif;
+            color: #fff;
+            transition: background-color .3s ease;
+        }
+
+        .help .card:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            background-blend-mode: darken;
+        }
+
+        .card-Volunteer {
+            background-image: url(asset\ 5.jpeg);
+            background-size: cover;
+        }
+
+        .card-Adopt {
+            background-image: url(asset\ 6.jpeg);
+            background-size: cover;
+        }
+
+        .card-Sponsor {
+            background-image: url(asset\ 7.jpeg);
+            background-size: cover;
+            color: #FF9933;
+        }
+
+        .card-Volunteer p:hover,
+        .card-Adopt p:hover,
+        .card-Sponsor p:hover {
+            color: #FF9933;
+            transition: .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="item">
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+                <p>Toll-free:(123)456-7890</p>
+            </div>
+            <div class="contact">
+                <div class="icon">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="asset 0.png" alt="logo">
+            </a>
+            <a href="#" class="brandName">Anilove</a>
+            <nav class="main-nav">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Events</a>
+                <a href="">News</a>
+                <a href="">Contacts</a>
+            </nav>
+            <a href="#" class="btn-donate">DONATE NOW!</a>
+            <!-- <button class="btn-donate">
+                <span>DONATE NOW!</span>
+            </button> -->
+        </div>
+    </header>
+
+    <div class="banner">
+        <div class="container">
+            <div class="item text">
+                <h2>Animals Need
+                    <small>YOUR HELP!</small>
+                </h2>
+                <p>You can chip in with money&effort!</p>
+                <a href="#" class="btn-donate">DONATE NOW!</a>
+                <!-- <button class="btn-donate">DONATE NOW!</button> -->
+            </div>
+            <div class="item pic">
+                <img src="asset 4.jpeg" alt="cat">
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="container">
+            <div class="item pic">
+                <img src="asset 1.jpeg" alt="woman with dog">
+            </div>
+            <div class="item text">
+                <h2>About Us</h2>
+                <h3>What Makes Us Care About Pets?</h3>
+                <p>If it wasn’t for our founder’s childhood spent on a ranch in northern Texas, surrounded by domestic
+                    animals and pets all the time till she went to college – there might have been no Anilove animal
+                    shelter now. So as soon as she graduated with her Veterinary degree 12 years ago, she already knew
+                    what she will be doing for a living.</p>
+                <p>All in all, with thousands of animals saved off the streets and cared for every year, we hope to
+                    encourage much more pet adoptions to happen!</p>
+                <a href="#" class="btn-learn">LEARN MORE</a>
+                <!-- <button class="btn-learn">
+                    <span>LEARN MORE</span>
+                </button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="help">
+        <h2>How You Can Help</h2>
+        <h3>There Are Countless Ways You Can Join In & Help Us!</h3>
+        <div class="wrap">
+            <div class="card-list">
+                <div class="card card-Volunteer">
+                    <p>Volunteer</p>
+                </div>
+                <div class="card card-Adopt">
+                    <p>Adopt</p>
+                </div>
+                <div class="card card-Sponsor">
+                    <p>Sponsor</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
