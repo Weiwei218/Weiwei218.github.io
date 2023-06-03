@@ -17,7 +17,7 @@
             font-family: 'Lato', sans-serif;
         }
 
-        .header .container {
+        .header {
             background-color: #272626;
         }
 
@@ -27,7 +27,7 @@
             justify-content: space-between;
             margin: auto;
             font-weight: 300;
-            padding: 25px 100px;
+            padding: 20px 100px;
         }
 
         .header .phone {
@@ -63,16 +63,21 @@
             background-color: #FF9933;
         }
 
-        .header .wrap {
+        .sticky-navbar {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+        }
+        .sticky-navbar .wrap{
             width: 1200px;
             display: flex;
             align-items: center;
             margin: auto;
-            padding: 20px 100px;
-            letter-spacing: 1px;
+            padding: 30px 100px;
+            letter-spacing: 1px;   
         }
 
-        .header .logo-brand a {
+        .sticky-navbar .logo-brand a {
             display: flex;
             align-items: center;
             text-decoration: none;
@@ -82,15 +87,15 @@
             font-weight: 700;
         }
 
-        .header .logo-brand .logo {
+        .sticky-navbar .logo-brand .logo {
             margin-right: 15px;
         }
 
-        .header .navbar {
+        .sticky-navbar .navbar {
             margin: auto;
         }
 
-        .header .navbar a {
+        .sticky-navbar .navbar a {
             text-decoration: none;
             padding: 20px;
             font-size: 18px;
@@ -98,13 +103,13 @@
             font-weight: 300;
         }
 
-        .header .navbar a:hover {
+        .sticky-navbar .navbar a:hover {
             text-decoration: underline #FF9933;
             text-underline-offset: 15px;
             text-decoration-thickness: 3px;
         }
 
-        .header .btn-donate {
+        .sticky-navbar .btn-donate {
             text-decoration: none;
             border: 2px solid #FF9933;
             color: #FF9933;
@@ -116,10 +121,16 @@
             transition: background-color .3s ease;
         }
 
-        .header .btn-donate:hover {
+        .sticky-navbar .btn-donate:hover {
             background-color: #7ABEE9;
             color: white;
             border-color: #7ABEE9;
+        }
+
+        .sticky-navbar .navbar a .home {
+            text-decoration: underline #FF9933;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 3px;
         }
 
         .banner {
@@ -272,9 +283,9 @@
             background-blend-mode: darken;
         }
 
-        .help .card a{
+        .help .card a {
             text-decoration: none;
-            color:#fff;
+            color: #fff;
         }
 
         .card-Volunteer {
@@ -301,21 +312,16 @@
             color: #FF9933;
             transition: .3s;
         }
-        .header .navbar a .home{
-            text-decoration: underline #FF9933;
-            text-underline-offset: 15px;
-            text-decoration-thickness: 3px;
-        }
+
     </style>
 </head>
 
 <body>
     <header class="header">
-        <div class="container">
             <div class="contact">
                 <div class="phone">
                     <i class="fa-solid fa-phone"></i>
-                    <p>Toll-free: (123)456-7890</p>
+                    <p>Toll-free: (123) 456-7890</p>
                 </div>
                 <div class="social-media">
                     <div class="icon">
@@ -331,9 +337,10 @@
                         <i class="fa-brands fa-linkedin-in"></i>
                     </div>
                 </div>
-            </div>
         </div>
-
+    </header>
+    
+    <div class="sticky-navbar">
         <div class="wrap">
             <div class="logo-brand">
                 <a href="">
@@ -349,8 +356,8 @@
                 <a href="">Contacts</a>
             </nav>
             <a href="#" class="btn-donate">DONATE NOW!</a>
-        </div>
-    </header>
+        </div>        
+    </div>
 
     <div class="banner">
         <div class="text">
