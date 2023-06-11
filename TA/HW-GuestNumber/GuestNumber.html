@@ -5,20 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>猜數字遊戲</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .range {
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="range">請輸入
-        <span class="min">1</span> ~
-        <span class="max">100</span>
-        之間的數字
+    <div class="wrap">
+        <div class="range">請輸入
+            <span class="min">1</span> ~
+            <span class="max">100</span>
+            之間的數字
+        </div>
+        <div class="input-bar">
+            <input type="text">
+            <button class="btn-guess">猜</button>
+            <button class="btn-showAns">看答案</button>
+            <button class="btn-reset">重來</button>
+            <div>
+                <span class="message"></span>
+            </div>
+        </div>
     </div>
-    <input type="text">
-    <button>猜</button>
-    <div>
-        <span class="message"></span>
-    </div>
+
+
     <!-- <div>已猜：<span class="count">0</span>次</div> -->
 
 
@@ -28,18 +47,22 @@
         function getRandomInt(maxNum) {
             return Math.ceil(Math.random() * maxNum)
         }
-        const answer = getRandomInt(100);
+        let answer = getRandomInt(100);
         console.log(answer);
 
         let input = document.querySelector("input");
-        const btn = document.querySelector("button");
+        const btnGuess = document.querySelector(".btn-guess");
+        const btnAns = document.querySelector(".btn-showAns");
+        const btnReset = document.querySelector(".btn-reset");
         let min = document.querySelector(".min");
         let max = document.querySelector(".max");
         let msg = document.querySelector(".message");
         let count = document.querySelector(".count");
 
         // console.log(input);
-        // console.log(btn);
+        console.log(btnGuess);
+        console.log(btnAns);
+        console.log(btnReset);
         // console.log(min);
         // console.log(max);
         // console.log(msg);
@@ -47,7 +70,7 @@
 
         //宣告輸入數值
         // let guess;
-        btn.addEventListener("click", function () {
+        btnGuess.addEventListener("click", function () {
             let guess = parseInt(input.value);
             // console.log(`猜:${guess}`);     
             // console.log(typeof guess);
@@ -71,8 +94,27 @@
             }
             else {
                 msg.innerText = "猜對了!";
+                input.disabled = true;
+                btnGuess.disabled = true;
+                btnAns.disabled = true;
+
             }
         });
+
+        btnAns.addEventListener("click", function () {
+            msg.innerText = `答案是${answer}`;
+        })
+
+        btnReset.addEventListener("click", function () {
+            answer = getRandomInt(100);
+            minNum = 1;
+            maxNum = 100;
+            min.innerText = 1;
+            max.innerText = 100;
+            msg.innerText = null;
+            input.value = null;
+            console.log(answer);
+        })
 
 
             //紀錄遊戲次數
