@@ -5,51 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>威廷的作業清單</title>
 </head>
-<style>  
+<style>
     .wrap {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
     }
-    .wrap h1{
+
+    h1 {
         width: 200px;
         margin: auto;
         padding-top: 20px;
+
+        text-align: center;
+        justify-content: center;
+    }
+
+    h2 {
         text-align: center;
     }
-    .hw{
+
+    .hw {
         width: 300px;
         margin: auto;
         font-size: 24px;
     }
-    .hw a{
+
+    .hw a {
         text-decoration: none;
         line-height: 2;
     }
 </style>
 
 <body>
+
     <div class="wrap">
         <h1>威廷的作業</h1>
-        <ul>
-            <li class="hw">
-                <a href="./01_table/table.html">作業1(國小課表)</a>
-            </li>
-            <li class="hw">
-                <a href="./02_anilove/anilove.html">作業2(anilove)</a>
-            </li>
-            <li class="hw">
-                <a href="./03_shopline/shopline.html">作業3(shopline)</a>
-            </li>
-            <li class="hw">
-                <a href="./04_toyota/toyota.html">作業4(Toyota)</a>
-            </li>
-            <li class="hw">
-                <a href="./05_Malama Hawaii/Malama Hawaii.html">作業5(Hawaii)</a>
-            </li>
-        </ul>
-
+        <div class="amos">
+            <h2>amos</h2>
+            <ul>
+                <li class="hw">
+                    <a href="./01_table/table.html">作業1(國小課表)</a>
+                </li>
+                <li class="hw">
+                    <a href="./02_anilove/anilove.html">作業2(anilove)</a>
+                </li>
+                <li class="hw">
+                    <a href="./03_shopline/shopline.html">作業3(shopline)</a>
+                </li>
+                <li class="hw">
+                    <a href="./04_toyota/toyota.html">作業4(Toyota)</a>
+                </li>
+                <li class="hw">
+                    <a href="./05_Malama Hawaii/Malama Hawaii.html">作業5(Hawaii)</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ta">
+            <h2>助教課</h2>
+            <ul>
+                <li class="hw">
+                    <a href="./TA/HW-GuestNumber/GuestNumber.html">猜數字(js)</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="range">請輸入
+        <span class="min">1</span> ~
+        <span class="max">100</span>
+        之間的數字
+    </div>
+    <input type="text">
+    <button>猜</button>
+    <div>
+        <span class="message"></span>
+    </div>
+    <!-- <div>已猜：<span class="count">0</span>次</div> -->
+
+
+    <script>
+        let minNum = 1;
+        let maxNum = 100;
+        function getRandomInt(maxNum) {
+            return Math.ceil(Math.random() * maxNum)
+        }
+        const answer = getRandomInt(100);
+        console.log(answer);
+
+        let input = document.querySelector("input");
+        const btn = document.querySelector("button");
+        let min = document.querySelector(".min");
+        let max = document.querySelector(".max");
+        let msg = document.querySelector(".message");
+        let count = document.querySelector(".count");
+
+        // console.log(input);
+        // console.log(btn);
+        // console.log(min);
+        // console.log(max);
+        // console.log(msg);
+        // console.log(count);
+
+        //宣告輸入數值
+        // let guess;
+        btn.addEventListener("click", function () {
+            let guess = parseInt(input.value);
+            // console.log(`猜:${guess}`);     
+            // console.log(typeof guess);
+
+            if (isNaN(guess)) {
+                msg.innerText = "請輸入數字!";
+            }
+            else if (guess > maxNum || guess < minNum) {
+                msg.innerText = "輸入範圍錯誤!";
+            }
+            else if (guess < answer) {
+                minNum = guess;
+                min.innerText = guess;
+                msg.innerText = "沒猜中!";
+
+            }
+            else if (guess > answer) {
+                maxNum = guess;
+                max.innerText = guess;
+                msg.innerText = "沒猜中!";
+            }
+            else {
+                msg.innerText = "猜對了!";
+            }
+        });
+
+
+            //紀錄遊戲次數
+
+
+    </script>
+
+</body>
+
+</html>
