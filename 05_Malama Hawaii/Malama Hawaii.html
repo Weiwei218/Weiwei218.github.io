@@ -55,7 +55,7 @@
         .item {
             display: grid;
             grid-template-rows: repeat(4, auto);
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, calc((100% - 16px) / 2));
             gap: 16px;
         }
 
@@ -108,11 +108,23 @@
         }
 
         .item-sub .catagory span {
-            /* white-space: nowrap; */
+            width: 100%;
+            white-space: nowrap;
             overflow: hidden;
-
+            position: relative;
         }
 
+        .item-sub .catagory span::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 4em;
+            /* background-color: #fa0; */
+            /* background-image: linear-gradient(270deg, #fff, transparent); */
+            background-image: linear-gradient(to left, #fff, transparent);
+        }
         .item-sub .catagory img {
             width: 20px;
             margin-right: 5px;
@@ -236,7 +248,9 @@
         </div>
         <div class="item">
             <a href="" class="item-main">
-                <div class="catagory"></div>
+                <div class="catagory">
+                    <span></span>
+                </div>
                 <div class="pic">
                     <img src="01-01.png" alt="">
                 </div>
@@ -252,7 +266,7 @@
             <a href="" class="item-sub">
                 <div class="catagory">
                     <img src="01.svg" alt="">
-                    エコ活動
+                    <span>エコ活動</span>
                 </div>
                 <div class="pic">
                     <img src="01-02.jpg" alt="">
@@ -266,7 +280,7 @@
             <a href="" class="item-sub">
                 <div class="catagory">
                     <img src="02.svg" alt="">
-                    イベント
+                    <span>イベント</span>
                 </div>
                 <div class="pic">
                     <img src="01-03.jpg" alt="">
@@ -279,7 +293,7 @@
             <a href="" class="item-sub">
                 <div class="catagory">
                     <img src="03.svg" alt="">
-                    その他
+                    <span>その他</span>
                 </div>
                 <div class="pic">
                     <img src="01-04.jpg" alt="">
@@ -294,7 +308,7 @@
             <a href="" class="item-sub">
                 <div class="catagory">
                     <img src="04.svg" alt="">
-                    カルチャー
+                    <span>カルチャー</span>
                 </div>
                 <div class="pic">
                     <img src="01-05.png" alt="">
@@ -322,7 +336,7 @@
         <div class="item">
             <a href="" class="item-main">
                 <div class="catagory">
-                    ジャルパック
+                    <span>ジャルパック</span>
                 </div>
                 <div class="pic">
                     <img src="02-01.jpeg" alt="">
@@ -338,7 +352,7 @@
 
             <a href="" class="item-sub">
                 <div class="catagory">
-
+                    <span></span>
                 </div>
                 <div class="pic">
                     <img src="02-02.jpg" alt="">
@@ -351,7 +365,7 @@
 
             <a href="" class="item-sub">
                 <div class="catagory">
-
+                    <span></span>
                 </div>
                 <div class="pic">
                     <img src="02-03.jpg" alt="">
@@ -363,7 +377,7 @@
             </a>
             <a href="" class="item-sub">
                 <div class="catagory">
-                    オラカイ株式会社
+                    <span>オラカイ株式会社</span>
                 </div>
                 <div class="pic">
                     <img src="02-04.jpg" alt="">
@@ -485,7 +499,7 @@
         <div class="item">
             <a href="" class="item-main">
                 <div class="catagory">
-
+                    <span></span>
                 </div>
                 <div class="pic">
                     <img src="04-01.jpg" alt="">
@@ -501,7 +515,7 @@
 
             <a href="" class="item-sub">
                 <div class="catagory">
-                    サスティナブル・コーストラインズ・ハワイ（Sustainable Coastlines Hawaii）
+                    <span>サスティナブル・コーストラインズ・ハワイ（Sustainable Coastlines Hawaii）</span>
                 </div>
                 <div class="pic">
                     <img src="04-02.jpeg" alt="">
@@ -513,7 +527,9 @@
             </a>
 
             <a href="" class="item-sub">
-                <div class="catagory"></div>
+                <div class="catagory">
+                    <span></span>
+                </div>
                 <div class="pic">
                     <img src="04-03.jpg" alt="">
                 </div>
@@ -524,7 +540,7 @@
             </a>
             <a href="" class="item-sub">
                 <div class="catagory">
-                    アウトリガー・ホテルズ＆リゾーツ
+                    <span>アウトリガー・ホテルズ＆リゾーツ</span>
                 </div>
                 <div class="pic">
                     <img src="04-04.jpg" alt="">
@@ -536,7 +552,7 @@
             </a>
             <a href="" class="item-sub">
                 <div class="catagory">
-                    クプ・ハワイ（KUPU Hawaii）
+                    <span>クプ・ハワイ（KUPU Hawaii）</span>
                 </div>
                 <div class="pic">
                     <img src="04-05.jpg" alt="">

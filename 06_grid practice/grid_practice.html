@@ -17,18 +17,18 @@
         }
 
         .pic {
-            width: 50%;
+            width: 55%;
         }
 
         .pic img {
             width: 100%;
-            aspect-ratio: 1/1;
+            aspect-ratio: 3/2;
             vertical-align: top;
             object-fit: cover;
         }
 
         .text {
-            width: 50%;
+            width: 45%;
             padding: 10px;
             box-sizing: border-box;
         }
@@ -47,19 +47,18 @@
                 width: 100%;
             }
 
-            .pic img {
-                aspect-ratio: 3/2;
-            }
         }
 
         @media screen and (min-width: 1024px) {}
 
         @media screen and (min-width: 1200px) {
 
-            .col-xl-12 .card,
-            .col-xl-6 .card {
+            .row :first-child .card,
+            .row :nth-child(5) .card,
+            .row :nth-child(6) .card {
                 display: flex;
-            }
+            }    
+
         }
     </style>
 </head>
@@ -97,7 +96,7 @@
             <div class="col-12 col-md-4 col-lg-3 col-xl-4">
                 <div class="card">
                     <div class="pic">
-                        <img src="https://picsum.photos/300/200/?random=11">
+                        <img src="https://picsum.photos/300/200/?random=12">
                     </div>
                     <div class="text">
                         <h3>title</h3>
@@ -109,7 +108,7 @@
             <div class="col-12 col-md-4 col-lg-3 col-xl-4">
                 <div class="card">
                     <div class="pic">
-                        <img src="https://picsum.photos/300/200/?random=11">
+                        <img src="https://picsum.photos/300/200/?random=13">
                     </div>
                     <div class="text">
                         <h3>title</h3>
@@ -121,7 +120,7 @@
             <div class="col-12 col-md-4 col-lg-3 col-xl-6">
                 <div class="card">
                     <div class="pic">
-                        <img src="https://picsum.photos/300/200/?random=12">
+                        <img src="https://picsum.photos/300/200/?random=14">
                     </div>
                     <div class="text">
                         <h3>title</h3>
@@ -133,7 +132,7 @@
             <div class="col-12 col-md-4 col-lg-3 col-xl-6">
                 <div class="card">
                     <div class="pic">
-                        <img src="https://picsum.photos/300/200/?random=12">
+                        <img src="https://picsum.photos/300/200/?random=15">
                     </div>
                     <div class="text">
                         <h3>title</h3>
