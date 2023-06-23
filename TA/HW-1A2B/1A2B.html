@@ -64,6 +64,7 @@
 
         let answerArray = []
         let guessArray = []
+        let input, message
         let min = 0, max = 9
         let countA = 0, countB = 0
 
@@ -72,102 +73,40 @@
             const btnAnswer = document.querySelector(".btn-answer")
             const btnReset = document.querySelector(".btn-reset")
             const btnGuess = document.querySelector(".btn-guess")
-            let input = document.querySelector("input")
-
-            let message = document.querySelector(".message")
+            input = document.querySelector("input")
+            message = document.querySelector(".message")
 
             btnAnswer.disabled = true
             btnReset.disabled = true
-            input.disabled = true
             btnGuess.disabled = true
+            input.disabled = true
 
             btnStart.addEventListener("click", () => {
-
                 getRandomNum(min, max)
-
                 btnStart.disabled = true
                 btnAnswer.disabled = false
                 btnReset.disabled = false
-                input.disabled = false
                 btnGuess.disabled = false
+                input.disabled = false
             })
-
-            function getRandomNum(min, max) {
-                // 4位數字不重複、要有0開頭
-                while (answerArray.length < 4) {
-                    let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
-                    if (!answerArray.includes(randomNum)) {
-                        answerArray.push(randomNum)
-                    }
-                }
-                console.log(answerArray)
-            }
 
             btnGuess.addEventListener("click", () => {
                 guessArray = input.value.toString().split('')
                 // console.log(guessArray)
-                checkAvalible()
-                displayResult()
-
+                if(checkAvalible()){
+                    displayResult()
+                }                
 
                 //猜完輸入欄清空
                 input.value = null
-
-                // 不能輸入負數、只能有4個數字、數字不能重複
-                function checkAvalible() {
-                    if (guessArray[0] === "-" || guessArray.length !== 4 || isRepeated()) {
-                        alert("請輸入4個不重複的數字")
-                    }
-                    else {
-                        let guessArrayNum = guessArray.map(Number)
-                        // console.log(guessArrayNum)
-
-                        //比數字
-                        for (i = 0; i < answerArray.length; i++) {
-                            if (answerArray.indexOf(guessArrayNum[i]) != -1) {
-                                if (answerArray.indexOf(guessArrayNum[i]) === i) {
-                                    countA++
-                                }
-                                else {
-                                    countB++
-                                }
-                            }
-                        }
-
-                    }
-                }
-
-                function isRepeated() {
-
-                    for (i = 0; i < guessArray.length; i++) {
-                        // console.log(guessArray.indexOf(guessArray[i]))
-                        // console.log(guessArray.lastIndexOf(guessArray[i]))
-                        if (guessArray.indexOf(guessArray[i]) !== guessArray.lastIndexOf(guessArray[i])) {
-
-                            return true
-                        }
-
-                    }
-                    return false
-                }
-
-                function displayResult() {
-                    if (countA === 4) {
-                        alert("恭喜破關！")
-                    }
-                    else {
-                        message.innerText += `${input.value}: ${countA}A${countB}B\n`
-                        countA = 0, countB = 0
-                    }
-                    // console.log(countA)
-                    // console.log(countB)  
-                }
             })
 
 
             btnReset.addEventListener("click", () => {
                 answerArray = []
                 getRandomNum(min, max)
+                input.value = null
+                message.innerText = null
             })
 
             btnAnswer.addEventListener("click", () => {
@@ -175,19 +114,63 @@
             })
         }
 
+        // 不能輸入負數、只能有4個數字、數字不能重複
+        function checkAvalible() {
+            if (guessArray[0] === "-" || guessArray.length !== 4 || isRepeated()) {
+                alert("請輸入4個不重複的數字")
+                return false
+            }
+            else {
+                let guessArrayNum = guessArray.map(Number)
+                // console.log(guessArrayNum)
 
+                //比數字
+                for (i = 0; i < answerArray.length; i++) {
+                    if (answerArray.indexOf(guessArrayNum[i]) != -1) {
+                        if (answerArray.indexOf(guessArrayNum[i]) === i) {
+                            countA++
+                        }
+                        else {
+                            countB++
+                        }
+                    }
+                }
+                return true
+            }
+        }
 
+        // 4位數字不重複、要有0開頭
+        function getRandomNum(min, max) {            
+            while (answerArray.length < 4) {
+                let randomNum = Math.floor(Math.random() * (max - min + 1) + min)
+                if (!answerArray.includes(randomNum)) {
+                    answerArray.push(randomNum)
+                }
+            }
+            console.log(answerArray)
+        }
 
+        function isRepeated() {
+            for (i = 0; i < guessArray.length; i++) {
+                // console.log(guessArray.indexOf(guessArray[i]))
+                // console.log(guessArray.lastIndexOf(guessArray[i]))
+                if (guessArray.indexOf(guessArray[i]) !== guessArray.lastIndexOf(guessArray[i])) {
+                    return true
+                }
+            }
+            return false
+        }
 
-
-
-
-
-
-        function compareAnswer() {
-
-
-
+        function displayResult() {
+            if (countA === 4) {
+                alert("恭喜破關！")
+            }
+            else {
+                message.innerText += `${input.value}: ${countA}A${countB}B\n`
+                countA = 0, countB = 0
+            }
+            // console.log(countA)
+            // console.log(countB)  
         }
 
 
