@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購買iPad Air Copy</title>
+    <style>
+        .pic-options {
+            display: flex;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>購買iPad Air</h1>
+
+        <!-- <button id="btnGetJSON">Request JSON</button> -->
+        <div>
+            <h2>外觀</h2>
+            <div class="pic-options">
+                <div class="pic">
+                    <img id="ipadImg" src="" alt="">
+                </div>
+                <div class="options">
+                    <button id="btnColor">太空灰色</button>
+                    <button id="btnColor">藍色</button>
+                    <button id="btnColor">粉紅色</button>
+                    <button id="btnColor">紫色</button>
+                    <button id="btnColor">星光色</button>
+                </div>
+            </div>
+            <div>
+                <h2>儲存裝置</h2>
+                <button id="btnStorage">64GB</button>
+                <button id="btnStorage">256GB</button>
+            </div>
+            <div>
+                <h2>連線能力</h2>
+                <button id="btnNetwork" class="Wi-Fi">Wi-Fi</button>
+                <button id="btnNetwork" class="Cellular">Wi-Fi + 行動網路</button>
+                <!-- <button id="btnNetwork">Cellular</button> -->
+            </div>
+            <div id="msg" class="row"></div>
+        </div>
+
+        <script>
+            // const url = "https://raw.githubusercontent.com/Weiwei218/FileStorage/main/iPad2023.json";
+            const url = "./iPad2023.json";
+
+            let msg = document.getElementById("msg");
+
+            window.onload = function () {
+                // document.querySelector("#btnGetJSON").addEventListener("click", requestIpadJson.bind(event, url));
+                requestIpadJson(url);
+            }
+
+            let ipadArray = [], ipadColorArray = [], ipadStroageArray = [], ipadNetworkArray = [], ipadPriceArray = [];
+
+            let xhr = new XMLHttpRequest();
+            let br = document.createElement("br")
+            let btnColor = document.querySelectorAll("#btnColor")
+            let btnStorage = document.querySelectorAll("#btnStorage")
+            let btnNetwork = document.querySelectorAll("#btnNetwork")
+            let pic = document.querySelector("img")
+            let price
+
+            //選顏色，換圖
+            btnColor.forEach(button => {
+                button.addEventListener("click", selectColor.bind(event, button))
+            })
+
+            function selectColor(button) {
+                ipadColorArray = ipadArray.filter(ipad => {
+                    return ipad.color === button.innerText
+                });
+
+                console.log(ipadColorArray);
+
+                let imageUrl = `http://127.0.0.1:5500/Apple/${ipadColorArray[0].picture}`
+                document.getElementById("ipadImg").src = imageUrl
+            }
+
+            btnStorage.forEach(button => {
+                button.addEventListener("click", selectStorageAndNetwork.bind(event, button));
+            });
+
+            btnNetwork.forEach(button => {
+                button.addEventListener("click", selectStorageAndNetwork.bind(event, button));
+            });
+
+
+            let selectedBtnStorage = null, selectedBtnNetwork = null
+
+            //容量跟網路合併，決定價錢
+            function selectStorageAndNetwork(button) {
+                if (button.id === "btnStorage") {
+                    selectedBtnStorage = button;
+                }
+                else if (button.id === "btnNetwork") {
+                    selectedBtnNetwork = button;
+                }
+                console.log(typeof selectedBtnStorage)
+                if (selectedBtnStorage !== null && selectedBtnNetwork !== null) {
+                    ipadStorageArray = ipadColorArray.filter(ipad => {
+                        return ipad.storage === selectedBtnStorage.innerText;
+                    });
+
+                    ipadNetworkArray = ipadStorageArray.filter(ipad => {
+                        return ipad.network === selectedBtnNetwork.className;
+                    });
+
+                    console.log(ipadNetworkArray);
+                    displayPrice();
+                }
+            }
+
+            // function selectStorage(button) {
+            //     console.log(ipadColorArray);
+            //     ipadStorageArray = ipadArray.filter(ipad => {
+            //         return ipad.storage === button.innerText
+            //     });
+
+            //     console.log(ipadStorageArray);
+            // }
+
+
+
+            // function selectNetwork(button) {
+            //     ipadNetworkArray = ipadStorageArray.filter(ipad => {
+            //         return ipad.network === button.className
+            //     });
+
+            //     console.log(ipadNetworkArray);
+            //     displayPrice()
+            // }
+
+            function displayPrice() {
+                price = ipadNetworkArray[0].price
+                console.log(price)
+                msg.innerHTML = `NT$${price}`
+            }
+
+
+            function requestIpadJson(uri) {
+                xhr.onload = function () {
+                    // ipadArray = JSON.parse(this.responseText)
+                    // console.log(ipadArray)
+                    ipadArray = this.response
+                    // console.log(ipadArray)
+                }
+
+                xhr.open("GET", uri);
+                xhr.responseType = "json" //如果寫這行，就不用寫ipadArray = JSON.parse(this.responseText)，可以直接寫ipadArray = this.response
+                xhr.send();
+            }
+
+
+
+        </script>
+
+</body>
+
+</html>
