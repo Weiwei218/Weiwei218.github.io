@@ -399,14 +399,16 @@
 
     function tdClickFn(year, month, day) {
 
-
-
-
       myModalAdd.show()
       // myModalEdit.show()
 
       // 取日期寫到Modal的input.value，因為input的type用date，月日會是兩位數，所以要轉型成string左邊補0
-      return addDateDOM.value = `${year}-${(month + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`
+      addDateDOM.value = `${year}-${(month + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`
+
+      addTitleDOM.value = null
+      addContentDOM.value = null
+
+      
     }
     // 取得local storage的資料
     function getLocalStorage(key) {
