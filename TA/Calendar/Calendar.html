@@ -67,7 +67,7 @@
       </tbody>
     </table>
 
-    <!-- 新增行程 Modal -->
+    <!-- 新增行程 Modal 開始=====================================================-->
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" id="addTask">
       新增行程
@@ -90,11 +90,11 @@
             </div>
 
             <!-- 標題 -->
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
               <span class="input-group-text">標題</span>
               <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
                 id="add-title">
-            </div>
+            </div> -->
 
             <!-- 內容 -->
             <div class="input-group mb-3">
@@ -105,17 +105,20 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary" id="add-footer-add">新增</button>
+            <button type="button" class="btn btn-primary btn-add">新增</button>
           </div>
         </div>
       </div>
     </div>
+    <!-- 新增行程 Modal 結束=====================================================-->
 
-    <!-- 編輯行程 Modal -->
+
+
+    <!-- 編輯行程 Modal 開始=====================================================-->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"  id="editTask">
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"  id="editTask">
       編輯行程
-    </button>
+    </button> -->
 
     <!-- Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -134,11 +137,11 @@
             </div>
 
             <!-- 標題 -->
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
               <span class="input-group-text">標題</span>
               <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
                 id="edit-title">
-            </div>
+            </div> -->
 
             <!-- 內容 -->
             <div class="input-group mb-3">
@@ -149,14 +152,14 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary" id="edit-footer-edit">修改</button>
-            <button type="button" class="btn btn-danger" id="edit-footer-delete">刪除</button>
+            <button type="button" class="btn btn-primary btn-edit">修改</button>
+            <button type="button" class="btn btn-danger btn-delete">刪除</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- 編輯行程 Modal 結束=====================================================-->
 
 
 
@@ -169,9 +172,9 @@
     const myModalAdd = new bootstrap.Modal('#addModal', {
       keyboard: false
     })
-    const myModalEdit = new bootstrap.Modal('#editModal', {
-      keyboard: false
-    })
+    // const myModalEdit = new bootstrap.Modal('#editModal', {
+    //   keyboard: false
+    // })
 
 
 
@@ -197,21 +200,21 @@
 
     const addModalBtn = document.getElementById('addModal')
     const addDateDOM = document.getElementById("add-date")
-    const addTitleDOM = document.getElementById("add-title")
+    // const addTitleDOM = document.getElementById("add-title")
     const addContentDOM = document.getElementById("add-content")
-    const addFooterAddBtn = document.getElementById("add-footer-add")
+    const addBtn = document.querySelector(".btn-add")
 
     const editModalBtn = document.getElementById('editModal')
     const editDateDOM = document.getElementById("edit-date")
-    const editTitleDOM = document.getElementById("edit-title")
+    // const editTitleDOM = document.getElementById("edit-title")
     const editContentDOM = document.getElementById("edit-content")
-    const editFooterEditBtn = document.getElementById("edit-footer-edit")
-    const editFooterDeleteBtn = document.getElementById("edit-footer-delete")
+    const editEditBtn = document.querySelector("#editModal .btn-edit")
+    const editDeleteBtn = document.querySelector("#editModal .btn-delete")
     // let trDOM = document.createElement("tr")
     // let tdDOM = document.createElement("td")
     // 
     const addTaskBtn = document.getElementById("addTask")
-
+      let localStorageKey = []
 
 
     // addEventListener
@@ -244,14 +247,14 @@
 
     addTaskBtn.addEventListener('click', () => {
       addDateDOM.value = null
-      addTitleDOM.value = null
+      // addTitleDOM.value = null
       addContentDOM.value = null
     })
     editModalBtn.addEventListener('click', () => {
       editDateDOM.value = null
     })
     // 新增行程Modal的新增按鈕
-    addFooterAddBtn.addEventListener("click", function () {
+    addBtn.addEventListener("click", function () {
 
 
 
@@ -259,7 +262,7 @@
       let key = addDateDOM.value.split("-").join("")
       // console.log(`key:${key}`)
       let obj = {
-        title: addTitleDOM.value,
+        // title: addTitleDOM.value,
         content: addContentDOM.value
       }
 
@@ -279,14 +282,14 @@
 
     })
     // 編輯行程Modal的修改按鈕
-    editFooterEditBtn.addEventListener("click", function () {
+    // editFooterEditBtn.addEventListener("click", function () {
 
-    })
+    // })
 
     // 編輯行程Modal的刪除按鈕
-    editFooterDeleteBtn.addEventListener("click", function () {
+    // editFooterDeleteBtn.addEventListener("click", function () {
 
-    })
+    // })
 
 
 
@@ -373,7 +376,7 @@
               tasks.forEach((task) => {
                 let taskItem = document.createElement("li")
                 taskItem.classList.add(`date${(month + 1).toString().padStart(2, "0")}${day.toString().padStart(2, "0")}-${serialNumber}`)
-                taskItem.innerText = task.title
+                taskItem.innerText = task.content
                 tasksList.append(taskItem)
                 serialNumber++
               })
@@ -405,7 +408,7 @@
       // 取日期寫到Modal的input.value，因為input的type用date，月日會是兩位數，所以要轉型成string左邊補0
       addDateDOM.value = `${year}-${(month + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`
 
-      addTitleDOM.value = null
+      // addTitleDOM.value = null
       addContentDOM.value = null
 
       
