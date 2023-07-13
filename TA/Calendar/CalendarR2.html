@@ -67,7 +67,7 @@
       </tbody>
     </table>
 
-    <!-- 新增行程 Modal -->
+    <!-- 新增行程 Modal 開始=====================================================-->
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal" id="addTask">
       新增行程
@@ -90,11 +90,11 @@
             </div>
 
             <!-- 標題 -->
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
               <span class="input-group-text">標題</span>
               <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
                 id="add-title">
-            </div>
+            </div> -->
 
             <!-- 內容 -->
             <div class="input-group mb-3">
@@ -105,18 +105,16 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary" id="add-footer-add">新增</button>
+            <button type="button" class="btn btn-primary btn-add">新增</button>
           </div>
         </div>
       </div>
     </div>
+    <!-- 新增行程 Modal 結束=====================================================-->
 
-    <!-- 編輯行程 Modal -->
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"  id="editTask">
-      編輯行程
-    </button> -->
 
+
+    <!-- 編輯行程 Modal 開始=====================================================-->
     <!-- Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -126,21 +124,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-
+            <!-- yyyy-MM-dd -->
             <div class="input-group mb-3">
               <span class="input-group-text">日期</span>
               <input type="date" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
-                id="edit-date" data-index="">
+                id="edit-date">
             </div>
 
-
-            <div class="input-group mb-3">
-              <span class="input-group-text">標題</span>
-              <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
-                id="edit-title">
-            </div>
-
-
+            <!-- 內容 -->
             <div class="input-group mb-3">
               <span class="input-group-text">內容</span>
               <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
@@ -149,14 +140,14 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary" id="edit-footer-edit">修改</button>
-            <button type="button" class="btn btn-danger" id="edit-footer-delete">刪除</button>
+            <button type="button" class="btn btn-primary btn-edit">修改</button>
+            <button type="button" class="btn btn-danger btn-delete">刪除</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  <!-- 編輯行程 Modal 結束=====================================================-->
 
 
 
@@ -169,17 +160,18 @@
     const myModalAdd = new bootstrap.Modal('#addModal', {
       keyboard: false
     })
-    const myModalEdit = new bootstrap.Modal('#editModal', {
-      keyboard: false
-    })
 
     // modal end
+
 
     // 宣告
     let today = new Date()
     let year = today.getFullYear()
     let month = today.getMonth()
     // let day = 1
+
+
+
 
     // DOM
     const preMonthBtn = document.getElementById("preMonth")
@@ -190,21 +182,23 @@
 
     const addModalBtn = document.getElementById('addModal')
     const addDateDOM = document.getElementById("add-date")
-    const addTitleDOM = document.getElementById("add-title")
+    // const addTitleDOM = document.getElementById("add-title")
     const addContentDOM = document.getElementById("add-content")
-    const addFooterAddBtn = document.getElementById("add-footer-add")
+    const addBtn = document.querySelector(".btn-add")
 
     const editModalBtn = document.getElementById('editModal')
     const editDateDOM = document.getElementById("edit-date")
-    const editTitleDOM = document.getElementById("edit-title")
+    // const editTitleDOM = document.getElementById("edit-title")
     const editContentDOM = document.getElementById("edit-content")
-    const editFooterEditBtn = document.getElementById("edit-footer-edit")
-    const editFooterDeleteBtn = document.getElementById("edit-footer-delete")
+    const editEditBtn = document.querySelector("#editModal .btn-edit")
+    const editDeleteBtn = document.querySelector("#editModal .btn-delete")
     // let trDOM = document.createElement("tr")
     // let tdDOM = document.createElement("td")
     // 
     const addTaskBtn = document.getElementById("addTask")
 
+    const storageKey = "my-tasks"
+    let myTasksObj = {}
 
 
     // addEventListener
@@ -237,101 +231,57 @@
 
     addTaskBtn.addEventListener('click', () => {
       addDateDOM.value = null
-      addTitleDOM.value = null
+      // addTitleDOM.value = null
       addContentDOM.value = null
     })
-
+    editModalBtn.addEventListener('click', () => {
+      editDateDOM.value = null
+    })
     // 新增行程Modal的新增按鈕
-    addFooterAddBtn.addEventListener("click", function () {
-
+    addBtn.addEventListener("click", function () {
       // console.log(`addDateDOM.value:${addDateDOM.value}`)
-      let key = addDateDOM.value.split("-").join("")
-      
-      // console.log(`key:${key}`)
-      let obj = {
-        title: addTitleDOM.value,
-        content: addContentDOM.value
+      const dateString = addDateDOM.value
+      const taskContent = addContentDOM.value.trim()
+      if (taskContent === "") {
+        alert("輸入內容空白")
       }
+      // myTasksObj = {
+      //   content: addContentDOM.value
+      // }
 
-      //找local storage
-      let dataArray = []
-      let data = getLocalStorage(key)
-      if (data === null) {
-        dataArray.push(obj)
-      } else {
-        dataArray = data
-        dataArray.push(obj)
-      }
       //寫入local storage
-      setLocalStorage(key, dataArray)
+      setTaskToStorage(dateString, taskContent)
+      addContentDOM.value = null
+      renderDate()
       myModalAdd.hide()
-      renderDate()
+
     })
+
+
+
+
     // 編輯行程Modal的修改按鈕
-    editFooterEditBtn.addEventListener("click", function () {
-      // 取得修改後的內容
-      let editDate = editDateDOM.value.split("-").join("")
-      let editTitle = editTitleDOM.value
-      let editContent = editContentDOM.value
-      // console.log(editDate)
-      // console.log(editTitle)
-      // console.log(editContent)
+    // editFooterEditBtn.addEventListener("click", function () {
 
-      // 取得修改的index
-      let index = editDateDOM.getAttribute("data-index")
-      // console.log(index)
-
-      // 取得local storage的資料
-      let data = getLocalStorage(editDate)
-      // console.log(data)
-
-      // 把行程塞進物件
-      let obj = {
-        title: editTitle,
-        content: editContent
-      }
-      // console.log(obj)
-
-      // 更新資料 step1
-      data[index] = obj
-      setLocalStorage(editDate, data)
-      myModalEdit.hide()
-      renderDate()
-    })
+    // })
 
     // 編輯行程Modal的刪除按鈕
-    editFooterDeleteBtn.addEventListener("click", function () {
-      // 刪除的日期
-      let editDate = editDateDOM.value.split("-").join("")
-      console.log(editDate)
+    // editFooterDeleteBtn.addEventListener("click", function () {
 
-      // 要刪除的是哪一筆
-      let index = editDateDOM.getAttribute("data-index")
-
-      // 取得 localstorage的資料
-      let data = getLocalStorage(editDate)
-
-      // 刪除資料
-      data.splice(index, 1)
-      // console.log(data)
-
-      setLocalStorage(editDate, data)
-      myModalEdit.hide()
-      renderDate()
-    })
+    // })
 
 
 
     //===============================================
     window.onload = function () {
 
-      renderDate() 
+      renderDate()
+      // 
 
     }
 
     function renderDate() {
       // 渲染
-      let day = 1
       tbodyDOM.innerHTML = ""
       yearMonthDOM.innerText = `${year}年 ${month + 1}月`
 
@@ -362,10 +312,20 @@
       // 如果要顯示上個月跟一個月的日期 end ===============
 
 
+
+
+
+      // tr
+      let day = 1
+      // day = 1
+
+
       for (let i = 0; i < weeks; i++) {
         let trDOM = document.createElement("tr")
+        // trDOM = document.createElement("tr")
         for (let j = 0; j < 7; j++) {
           let tdDOM = document.createElement("td")
+          // tdDOM = document.createElement("td")
 
           if (i === 0 && j < dayOfMonth) {
             tdDOM.innerText = finalOfPreMonth
@@ -373,46 +333,24 @@
             finalOfPreMonth++
           } else if (day <= dateOfMonth) {
             tdDOM.innerText = day
-            // 查詢日期是否有行程?
-            let key =`${year}${(month + 1).toString().padStart(2, "0")}${day.toString().padStart(2, "0")}`
-            // console.log(`key:${key}`)
-            let data = getLocalStorage(key)
-            // console.log(`data:${data}`)
-            if (data != null) {
-              let ulDOM = document.createElement("ul")
-              // 印出代辦事項
-              data.forEach((item, index) => {
-                let liDOM = document.createElement("li")
-                // console.log(item)
-                liDOM.innerText = item.title
-                // 按下代辦事項事件的綁定
-                let editDay = day
-                liDOM.addEventListener("click",function(e){
-                  myModalEdit.show()
-                  let editDate = `${year}-${(month + 1).toString().padStart(2, "0")}-${editDay.toString().padStart(2, "0")}`
-                  // console.log(`editdate:${editDate}`)
-                  editDateDOM.value = editDate
-                  // console.log(`editDateDOM:${editDateDOM.value}`)
-                  editTitleDOM.value = item.title
-                  editContentDOM.value = item.content
-                  editDateDOM.setAttribute("data-index", index)
-
-                  // 停止冒泡
-                  e.stopPropagation()
-
-                })
-                ulDOM.append(liDOM)
-              })
-              tdDOM.append(ulDOM)
-            }
-            tdDOM.addEventListener("click", tdClickFn.bind(null, year, month, day))            
+            tdDOM.addEventListener("click", tdClickFn.bind(null, year, month, day))
+            // getAndShowTasks()
+            // const taskBtn = document.querySelectorAll(`.date${(month + 1).toString().padStart(2, "0")}${day.toString().padStart(2, "0")}`)
             day++
-
           } else {
             tdDOM.innerText = firstOfNextMonth
             tdDOM.classList.add("text-secondary", "text-opacity-50")
             firstOfNextMonth++
           }
+
+
+          // 抓某日的任務然後顯示在行事曆上 ver.2 start==========================
+          //找local storage
+          getTaskFromStorage()
+
+          // 抓某日的任務然後顯示在行事曆上 ver.2 end==========================
+
+
           trDOM.append(tdDOM)
         }
         tbodyDOM.append(trDOM)
@@ -420,25 +358,54 @@
     }
 
     function tdClickFn(year, month, day) {
-      // 取日期寫到Modal的input.value，因為input的type用date，月日會是兩位數，所以要轉型成string左邊補0
-      addDateDOM.value = `${year}-${(month + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`
-      // console.log(`tdClick:${addDateDOM.value}`)
-      addTitleDOM.value=null
-      addContentDOM.value=null
 
       myModalAdd.show()
-    }
-    // 取得local storage的資料
-    function getLocalStorage(key) {
-      let data = JSON.parse(localStorage.getItem(key))
-      return data
-    }
-    // 寫入local storage的資料
-    function setLocalStorage(key, value) {
-      localStorage.setItem(key, JSON.stringify(value)) //放字串
+      // myModalEdit.show()
+
+      // 取日期寫到Modal的input.value，因為input的type用date，月日會是兩位數，所以要轉型成string左邊補0
+      addDateDOM.value = `${year}-${(month + 1).toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`
+
+      // addTitleDOM.value = null
+      addContentDOM.value = null
+
+
     }
 
+    // 取得local storage的資料
+    function getTaskFromStorage() {
+      const storagedTasksObj = JSON.parse(localStorage.getItem(storageKey))
+      if (storagedTasksObj){
+        myTasksObj = storagedTasksObj
+      }
+      console.log(myTasksObj)
+
+    }
+
+    function setTaskToStorage(dateString, taskContent) {
+      //物件取值：用點語法或是中括號，中括號允許以變數的方式取值
+      //將不同的Task儲存在同一天的陣列裡
+      if (!Array.isArray(myTasksObj[dateString])) {
+        myTasksObj[dateString] = []
+      }
+      myTasksObj[dateString].push(taskContent)
+      updateStorage()
+    }
+
+    function updateStorage() {
+      //轉成JSON string儲存在local storage
+      let taskItemsJson = JSON.stringify(myTasksObj)
+      localStorage.setItem(storageKey, taskItemsJson)
+    }
+
+
+
+
+
+
   </script>
+
+
+
 
 </body>
 
