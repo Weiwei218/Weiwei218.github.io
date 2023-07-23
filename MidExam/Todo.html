@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" class="form-control addon" placeholder="todo..." aria-label="Recipient's username"
+                    aria-describedby="basic-addon">
+                <span class="btn btn-primary" id="basic-addon">新增</span>
+            </div>
+        </div>
+        <div class="todoList">
+            <!-- <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-auto input-group-text">
+                            <input class="form-check-input mt-0 checkbox" type="checkbox" value=""
+                                aria-label="Checkbox for following text input">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" aria-label="Text input with checkbox" disabled>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-warning edit">編輯</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-danger delete">刪除</button>
+                        </div>
+                    </div>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const addContentDom = document.querySelector(".addon")
+        const addBtn = document.getElementById("basic-addon")
+        const containerDom = document.querySelector(".container")
+
+        const key = "my-todo"
+
+
+        // const deleteBtn = document.querySelector(".delete")
+
+        window.onload = function () {
+            // 抓local storage的資料，渲染到畫面上
+            renderTodo()
+        }
+
+
+        addBtn.addEventListener("click", function () {
+            // console.log("add")
+            // 抓addContentDom的待辦內容
+            let todoContent = addContentDom.value.trim()
+            // console.log(todoContent)
+            if (todoContent === "") return
+
+            // 儲存內容要有完成與否、待辦內容            
+            let obj = {
+                isCompleted: false,
+                content: todoContent
+            }
+
+            // 找local storage
+            let dataArray = []
+            let data = getLocalStorage(key)
+            // console.log(data)
+            if (data === null) {
+                dataArray.push(obj)
+            } else {
+                dataArray = data
+                dataArray.push(obj)
+            }
+
+            // 寫入local storage
+            setLocalStorage(key, dataArray)
+
+            // 清除addContentDom
+            addContentDom.value = null
+
+            renderTodo()
+        })
+
+        function renderTodo() {
+            const todoListDom = document.querySelector(".todoList")
+            todoListDom.innerHTML = ""
+            // 抓local storage的資料
+            let data = getLocalStorage(key)
+            // console.log(data)
+            // 渲染畫面，每個待辦要給index
+            data.forEach((item, index) => {
+                let todoHtml = getTodo(item.isCompleted, item.content, index)
+                todoListDom.innerHTML += todoHtml
+                // console.log(item.isCompleted)
+                function getTodo(isCompleted, content, index) {
+                    let myTodo = `<ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-auto input-group-text">
+                                    <input class="form-check-input mt-0 checkbox" data-index="${index}" type="checkbox" value=""
+                                        aria-label="Checkbox for following text input" 
+                                        // 完成狀態
+                                        ${isCompleted ? " checked" : ""}> 
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control edit-content-${index}"  aria-label="Text input with checkbox"  disabled value="${content}">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-warning edit "  data-index="${index}">編輯</button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-danger delete"  data-index="${index}">刪除</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>`
+
+                    return myTodo
+                }
+            })
+
+            // 編輯按鈕
+            const editBtns = document.querySelectorAll(".edit")
+            // console.log(editBtns)
+            editBtns.forEach(editBtn => {
+                editBtn.addEventListener("click", function (e) {
+                    console.log(editBtn)
+                    // 編輯哪筆，用index抓 
+                    const index = this.getAttribute("data-index")
+                    // console.log(index)
+                    const editContentDom = document.querySelector(".edit-content-" + index)
+                    // console.log(editContentDom)
+
+                    // 待辦內容 disable = false
+                    editContentDom.disabled = false
+
+                    // 變為保存按鈕
+                    const saveBtn = document.createElement("button")
+                    saveBtn.classList.add("btn", "btn-success", "save")
+                    saveBtn.setAttribute("type", "button")
+                    // saveBtn.setAttribute("id", )
+                    saveBtn.textContent = "保存"
+                    // console.log(saveBtn)
+                    editBtn.style.display = "none" // 隱藏編輯按鈕
+                    editBtn.parentNode.append(saveBtn)
+
+                    // 保存按鈕監聽事件
+                    saveBtn.addEventListener("click", function () {
+                        // 抓eidtContentDom修改後的內容
+                        let updatedContent = editContentDom.value.trim()
+
+                        // 更新local storage
+                        let data = getLocalStorage(key)
+                        data[index].content = updatedContent
+                        setLocalStorage(key, data)
+
+                        // 恢復editContentDom不可編輯、移除保存按鈕、編輯按鈕恢復
+                        editContentDom.disabled = true
+                        saveBtn.remove()
+                        editBtn.style.display = "inline-block"
+                    })
+                })
+            })
+
+            // 刪除按鈕
+            const deleteBtns = document.querySelectorAll(".delete")
+            // console.log(deleteBtns)
+            deleteBtns.forEach(deleteBtn => {
+                deleteBtn.addEventListener("click", function (e) {
+                    // console.log(deleteBtn)
+
+                    // 刪除哪筆，用index抓
+                    const index = this.getAttribute("data-index")
+                    // console.log(index)
+
+                    // 取得local storage資料
+                    let data = getLocalStorage(key)
+                    // console.log(data)
+
+                    // 刪除資料
+                    data.splice(index, 1)
+
+                    // 更新local storage
+                    setLocalStorage(key, data)
+
+                    e.stopPropagation()
+                    renderTodo()
+                })
+            })
+
+            // checkbox狀態
+            const checkboxInputs = document.querySelectorAll(".checkbox")
+            // console.log(checkboxInputs)
+            checkboxInputs.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    const index = this.getAttribute("data-index")
+                    // console.log(index)
+
+                    // 更新local storage
+                    let data = getLocalStorage(key)
+                    console.log(data)
+                    // console.log(data[index].isCompleted)
+                    data[index].isCompleted = this.checked
+                    // console.log(data[index].isCompleted)
+                    setLocalStorage(key, data)
+                })
+            })
+        }
+
+        // 取得local storage的資料
+        function getLocalStorage(key) {
+            return JSON.parse(localStorage.getItem(key))
+        }
+        // 寫入local storage的資料
+        function setLocalStorage(key, value) {
+            localStorage.setItem(key, JSON.stringify(value)) //放字串
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+[
+    {
+        "id": "1",
+        "icon": "fa-solid fa-apple-whole",
+        "target": function () {
+            return "Apple"
+        }
+    },
+    {
+        id: "1",
+        icon: "fa-solid fa-apple-whole",
+        target: function () {
+            return "Apple"
+        }
+    },
+    {
+        id: "1",
+        icon: "fa-solid fa-apple-whole",
+        target: function () {
+            return "Apple"
+        }
+    },
+
+
+]
