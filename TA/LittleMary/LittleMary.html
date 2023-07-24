@@ -11,8 +11,16 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        i {
-            font-size: 48px;
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
         }
 
         [box-id] {
@@ -25,24 +33,20 @@
         }
 
         [box-id].active {
-            border: 5px solid red;
-            box-shadow: 0 0 20px red;
+            border: 1px solid red;
+            box-shadow: 0 0 10px red;
             transition: 0s;
-        }
-
-        .start {
-            width: 100px;
         }
 
         #msg {
             font-size: 36px;
             text-align: center;
+            align-self: center;
         }
     </style>
 </head>
 
 <body>
-
     <!-- row-1 start -->
     <!-- <div class="container text-center">
         <div class="row align-items-center">
@@ -53,6 +57,7 @@
       </div> -->
     <!-- row-1 end -->
     <div class="container">
+        <h1>你總是要練習程式的，何不現在就開始</h1>
         <div class="row">
             <div class="col-1" box-id="1"></div>
             <div class="col-1" box-id="2"></div>
@@ -75,7 +80,7 @@
         <div class="row">
             <div class="col-1" box-id="31"></div>
             <div class="col-10 justify-content-center d-flex">
-                <button class="start">開始</button>
+                <button class="col-2 start btn-outline-danger btn fs-1">開始</button>
             </div>
             <div class="col-1" box-id="14"></div>
         </div>
@@ -106,233 +111,233 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
     <script>
         let brickData = [{
             id: "1",
-            color: "black",
-            icon: "fa-regular fa-sun",
+            // color: "black",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Sun"
+                return "JavaSciptQQ"
             }
         }, {
             id: "2",
-            color: "lightblue",
-            icon: "fa-regular fa-snowflake",
+            // color: "lightblue",
+            img: "/TA/LittleMary/csharp.png",
             target: function () {
-                return "Snow"
+                return "打開專案把之前寫過的練習通通再寫一遍！！"
             }
         }, {
             id: "3",
-            color: "purple",
-            icon: "fa-solid fa-skull-crossbones",
+            // color: "purple",
+            img: "/TA/LittleMary/ps5_1.png",
             target: function () {
-                return "Bones"
+                return "程式等下再寫，先來一場啦"
             }
         }, {
             id: "4",
-            color: "red",
-            icon: "fa-brands fa-apple",
+            // color: "red",
+            img: "/TA/LittleMary/css.png",
             target: function () {
-                return "Apple"
+                return "找個電商或旅遊網站來手刻，要有RWD！"
             }
         }, {
             id: "5",
-            color: "pink",
-            icon: "fa-solid fa-heart",
+            // color: "pink",
+            img: "/TA/LittleMary/ig.png",
             target: function () {
-                return "Love"
+                return "無法控制的想滑IG...就滑一分鐘，真的只滑一分鐘"
             }
         }, {
             id: "6",
-            color: "DeepSkyBlue",
-            icon: "fa-solid fa-music",
+            // color: "DeepSkyBlue",
+            img: "/TA/LittleMary/crepe.png",
             target: function () {
-                return "Music"
+                return "寫程式好辛苦，先去跟Dann哥要可麗餅吃，謝謝Dann哥！！！"
             }
         }, {
             id: "7",
-            color: "yellow",
-            icon: "fa-solid fa-star",
+            // color: "yellow",
+            img: "/TA/LittleMary/sql.png",
             target: function () {
-                return "Star"
+                return "北風資料庫開起來，查銷售金額最高的產品的大客戶所在的城市最愛買的前三名產品"
             }
         }, {
             id: "8",
-            color: "yellow",
-            icon: "fa-solid fa-bolt",
+            // color: "yellow",
+            img: "/TA/LittleMary/sleep.png",
             target: function () {
-                return "Bolt"
+                return "好累先去睡一覺zzZzzZ..."
             }
         }, {
             id: "9",
-            color: "lightgreen",
-            icon: "fa-solid fa-leaf",
+            // color: "lightgreen",
+            img: "/TA/LittleMary/csharp.png",
             target: function () {
-                return "Leaf"
+                return "打開專案把之前寫過的練習通通再寫一遍！！"
             }
         }, {
             id: "10",
-            color: "green",
-            icon: "fa-solid fa-tree",
+            // color: "green",
+            img: "/TA/LittleMary/crepe.png",
             target: function () {
-                return "Tree"
+                return "辛苦了，去跟Dann哥要可麗餅吃，謝謝Dann哥！！！"
             }
         }, {
             id: "11",
-            color: "purple",
-            icon: "fa-solid fa-moon",
+            // color: "purple",
+            img: "/TA/LittleMary/ps5_1.png",
             target: function () {
-                return "Moon"
+                return "程式等下再寫，先來一場啦"
             }
         }, {
             id: "12",
-            color: "lightblue",
-            icon: "fa-solid fa-cloud-rain",
+            // color: "lightblue",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Rain"
+                return "JavaSciptQQ"
             }
         }, {
             id: "13",
-            color: "red",
-            icon: "fa-solid fa-fire",
+            // color: "red",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Fire"
+                return "JavaSciptQQ"
             }
         }, {
             id: "14",
-            color: "yellow",
-            icon: "fa-solid fa-bell",
+            // color: "yellow",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Bell"
+                return "JavaSciptQQ"
             }
         }, {
             id: "15",
-            color: "light",
-            icon: "fa-regular fa-snowflake",
+            // color: "light",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Snow"
+                return "JavaSciptQQ"
             }
         }, {
             id: "16",
-            color: "lightblue",
-            icon: "fa-solid fa-cloud",
+            // color: "lightblue",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Cloud"
+                return "JavaSciptQQ"
             }
         }, {
             id: "17",
-            color: "black",
-            icon: "fa-regular fa-sun",
+            // color: "black",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Sun"
+                return "JavaSciptQQ窩只是在偷懶"
             }
         }, {
             id: "18",
-            color: "pink",
-            icon: "fa-solid fa-heart",
+            // color: "pink",
+            img: "/TA/LittleMary/sleep.png",
             target: function () {
-                return "Love"
+                return "想睡覺？同學都在練習你就去睡吧"
             }
         }, {
             id: "19",
-            color: "purple",
-            icon: "fa-solid fa-skull-crossbones",
+            // color: "purple",
+            img: "/TA/LittleMary/ig.png",
             target: function () {
-                return "Bones"
+                return "無法控制的想滑IG...就滑一分鐘，真的只滑一分鐘"
             }
         }, {
             id: "20",
-            color: "DeepSkyBlue",
-            icon: "fa-solid fa-music",
+            // color: "DeepSkyBlue",
+            img: "/TA/LittleMary/sql.png",
             target: function () {
-                return "Music"
+                return "設計一個購物車資料庫，做到第三正規化"
             }
         }, {
             id: "21",
-            color: "DarkOrange",
-            icon: "fa-solid fa-gift",
+            // color: "DarkOrange",
+            img: "/TA/LittleMary/csharp.png",
             target: function () {
-                return "Gift"
+                return "選一份講義，練習裡面所有的題目"
             }
         }, {
             id: "22",
-            color: "yellow",
-            icon: "fa-solid fa-star",
+            // color: "yellow",
+            img: "/TA/LittleMary/ps5_1.png",
             target: function () {
-                return "Star"
+                return "程式等下再寫，先來一場啦"
             }
         }, {
             id: "23",
-            color: "yellow",
-            icon: "fa-solid fa-bolt",
+            // color: "yellow",
+            img: "/TA/LittleMary/css.png",
             target: function () {
-                return "Bolt"
+                return "隨便找個網頁練習Bootstrap，計時三小時，開始！"
             }
         }, {
             id: "24",
-            color: "red",
-            icon: "fa-brands fa-apple",
+            // color: "red",
+            img: "/TA/LittleMary/sleep.png",
             target: function () {
-                return "Apple"
+                return "好累先去睡一覺zzZzzZ..."
             }
         }, {
             id: "25",
-            color: "lightgreen",
-            icon: "fa-solid fa-leaf",
+            // color: "lightgreen",
+            img: "/TA/LittleMary/sql.png",
             target: function () {
-                return "Leaf"
+                return "設計一個購物車資料庫，做到第三正規化"
             }
         }, {
             id: "26",
-            color: "purple",
-            icon: "fa-solid fa-moon",
+            // color: "purple",
+            img: "/TA/LittleMary/ig.png",
             target: function () {
-                return "Moon"
+                return "把IG移除，RIGHT NOW"
             }
         }, {
             id: "27",
-            color: "yellow",
-            icon: "fa-solid fa-bell",
+            // color: "yellow",
+            img: "/TA/LittleMary/crepe.png",
             target: function () {
-                return "Bell"
+                return "辛苦了，去跟Dann哥要可麗餅吃，謝謝Dann哥！！！"
             }
         }, {
             id: "28",
-            color: "green",
-            icon: "fa-solid fa-tree",
+            // color: "green",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Tree"
+                return "JavaSciptQQ"
             }
         }, {
             id: "29",
-            color: "lightblue",
-            icon: "fa-solid fa-cloud-rain",
+            // color: "lightblue",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Rain"
+                return "JavaSciptQQ"
             }
         }, {
             id: "30",
-            color: "DarkOrange",
-            icon: "fa-solid fa-gift",
+            // color: "DarkOrange",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Gift"
+                return "JavaSciptQQ"
             }
         }, {
             id: "31",
-            color: "red",
-            icon: "fa-solid fa-fire",
+            // color: "red",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Fire"
+                return "JavaSciptQQ"
             }
         }, {
             id: "32",
-            color: "lightblue",
-            icon: "fa-solid fa-cloud",
+            // color: "lightblue",
+            img: "/TA/LittleMary/js.png",
             target: function () {
-                return "Cloud"
+                return "JavaSciptQQ"
             }
         }
         ]
@@ -354,10 +359,10 @@
             // console.log(id)
             let data = brickData.find(x => x.id == id)
             // console.log(data)
-            let icon = document.createElement("i")
-            icon.setAttribute("class", data.icon)
-            icon.style.color = data.color
-            x.append(icon)
+            let img = document.createElement("img")
+            img.setAttribute("src", data.img)
+            img.style.color = data.color
+            x.append(img)
         })
 
         let steps = 0 //剩餘步數
@@ -369,7 +374,7 @@
             speed = 50
             let random = Math.floor(Math.random() * brickData.length) + 1
             // console.log(random)
-            steps = random + (3 * bricks.length)  //加號後面是為了多跑幾圈
+            steps = random + (2 * bricks.length)  //加號後面是為了多跑幾圈
             allsteps = steps
             turnAround()
         })
@@ -390,10 +395,10 @@
             } else {
                 let msgBox = document.getElementById("msg")
                 let val = brickData[currentIndex].target()
-                msgBox.innerText = `你選到${val}`
+                msgBox.innerText = `${val}`
             }
 
-              //變速版本
+            //變速版本
             //   if(steps>0){
             //     setTimeout(turnAround,speed);
             //     if(steps<Math.floor((allSteps/3))){
@@ -415,7 +420,7 @@
 
 
 
-   
+
 </body>
 
 </html>
