@@ -1,0 +1,424 @@
+/* header 搜尋欄 CSS start */
+.search-group {
+    padding: 0 70px;
+    background-color: #fff;
+}
+
+header:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #FB6184;
+    position: absolute;
+}
+
+.search-filter-and-subsribe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.search-filters-bar {
+    display: flex;
+    align-items: center;
+}
+
+.gap-line {
+    width: 1px;
+    height: 1em;
+    background-color: #ccc;
+}
+
+.dropdown-menu {
+    --bs-dropdown-padding-x: 1rem;
+    --bs-dropdown-padding-y: 1rem;
+}
+
+.dropdown-menu h5 {
+    font-size: 1rem;
+}
+
+.dropdown-menu h5:nth-child(n+2) {
+    margin-top: 1rem;
+}
+
+.dropdown-menu-salary * {
+    margin: 0.2rem 0;
+}
+
+.dropdown-menu-salary .input-group {
+    min-width: 15rem;
+}
+
+.input-salary-range {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu-salary .form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#button-salary-send {
+    width: 100%;
+}
+
+.filter-feature .dropdown-menu {
+    --bs-dropdown-min-width: 21rem;
+}
+
+.feature-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feature-items .form-check {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.feature-items .form-check-input {
+    margin-left: -1em;
+    margin-right: 0.5em;
+}
+
+.btn-subscribe {
+    color: #2369FF;
+    padding: 6px 16px 6px 40px;
+    font-weight: bold;
+    border: 1px solid #3978FF;
+    background-color: #fff;
+    border-radius: 44px;
+    background-image: url(./images/subscribe.svg);
+    background-position: left 16px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.modal {
+    --bs-modal-header-border-color: none;
+    --bs-modal-footer-border-color: none;
+}
+
+.btn-subscribe:hover {
+    background-color: #F4F7FF;
+}
+
+#subscribeModal img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1);
+    top: -104px;
+}
+
+#subscribeModal .modal-content {
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#subscribeModal .btn-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#subscribeModal .modal-body {
+    padding: 0;
+}
+
+#subscribeModal .modal-body p,
+#subscribeModal .modal-body input,
+#subscribeModal .modal-body button {
+    margin: 0.5em;
+}
+
+#subscribeModal .modal-body button {
+    width: 100%;
+}
+
+#subscribeModal .modal-footer {
+    text-align: left;
+}
+
+/* header 搜尋欄 CSS end */
+
+/* 搜尋結果 CSS start */
+.search-result {
+    width: 75%;
+}
+
+.search-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E9EAEB;
+}
+
+.search-result-header h2 {
+    font-size: 16px;
+    color: #95999F;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    /* width: 1280px; */
+    position: relative;
+    padding: 30px;
+}
+
+.order-by {
+    display: flex;
+    align-items: center;
+}
+
+.job-card {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #E9EAEB;
+}
+
+.job-recommend,
+.job-hurry,
+.job-new,
+.job-normal {
+    cursor: pointer;
+    padding: 16px 16px 16px 60px;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.job-recommend {
+    background-color: #fef6f8;
+}
+
+.job-new::before,
+.job-recommend::before,
+.job-hurry::before {
+    font-weight: bold;
+    padding-left: 20px;
+    height: 18px;
+    top: 20px;
+    left: 16px;
+    font-size: 16px;
+    line-height: 1.25;
+    display: inline-block;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.job-new::before {
+    content: "新";
+    color: #2B9DF8;
+    background-image: url(./images/new.svg);
+}
+
+.job-recommend::before {
+    content: "推";
+    color: #FA1E50;
+    background-image: url(./images/recommend.svg);
+}
+
+.job-hurry::before {
+    content: "急";
+    color: #FF9100;
+    background-image: url(./images/hurry.svg);
+}
+
+.job-normal::before {
+    content: "08/02";
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    font-size: 13px;
+    line-height: 19.5px;
+    color: #80858C;
+}
+
+.job-conditions {
+    display: flex;
+    align-items: center;
+}
+
+.job-conditions [class^="job-"] {
+    padding: 0 10px;
+}
+
+.job-description p{
+    /* font-size: 100px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.fa-heart {
+    color: #b6b9c0;
+}
+
+.fa-heart:hover {
+    color: #dc3545;
+}
+
+.fast-filters .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #D5D6D9;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.resume-selection,
+.self-introduction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+[data-bs-target="#ApplyModal"] {
+    display: flex;
+    align-items: center;
+}
+
+[data-bs-target="#ApplyModal"] svg {
+    margin-right: 5px;
+}
+
+[data-bs-target="#ApplyModal"] path {
+    fill: #bb2d3b;
+    transition: fill .15s ease-in-out;
+}
+
+[data-bs-target="#ApplyModal"]:hover path {
+    fill: #fff;
+}
+
+#ApplyModal h2 {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+#ApplyModal p {
+    margin-bottom: 0;
+}
+
+#ApplyModal .form-check {
+    display: flex;
+    align-items: center;
+}
+
+#ApplyModal .form-check-label {
+    text-align: center;
+    align-self: center;
+    padding: 10px;
+}
+
+#ApplyModal .form-check .form-control {
+    width: 82%;
+}
+
+.job-card[job-id]:hover {
+    background-color: #f2f5f9;
+    cursor: pointer;
+}
+
+.job-card[job-id]:hover .job-apply .btn {
+    transition: none;
+}
+
+.job-card[job-id]:hover .job-apply .btn-outline-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.job-card[job-id]:hover path {
+    fill: #fff;
+    transition: none;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.job-title:hover,
+a:hover,
+.company a:hover {
+    color: #6596ff;
+}
+
+.company a {
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.job-salary {
+    color: #2369FF;
+}
+
+.job-tags span {
+    font-size: 12px;
+    line-height: 18px;
+    color: #3CA8FF;
+    background-color: #F4F7FF;
+    border: 1px solid #CAE8FF;
+    border-radius: 4px;
+    padding: 1px 6px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/* 搜尋結果 CSS end */
+
+/* 右側快速篩選 CSS start */
+.fast-filters-and-map {
+    position: sticky;
+    top: 6rem;
+    height: 400px;
+    overflow-y: auto;
+    margin-left: 3rem;
+}
+
+/* 右側快速篩選 CSS end */
+
+/* 分頁 CSS start */
+.page {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: var(--bs-pagination-color);
+    text-decoration: none;
+    background-color: var(--bs-pagination-bg);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.pagination {
+    align-items: center;
+    margin: 30px 0;
+    --bs-pagination-color: #000;
+    --bs-pagination-focus-box-shadow: none;
+}
+
+.page-item:nth-child(n+3):nth-child(-n+6) {
+    font-size: 100px;
+    margin-left: 10px;
+}
+
+/* 分頁 CSS end */

@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>找工作</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header class="sticky-top">
+        <div class="search-group">
+            <div class="search-bar"></div> <!-- 與首頁同 -->
+            <div class="search-filter-and-subsribe">
+                <div class="search-filters-bar">
+                    <div class="dropdown filter filter-update">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            更新日期
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    不拘
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    本日最新
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    三日內
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault4">
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    一週內
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault5">
+                                <label class="form-check-label" for="flexRadioDefault5">
+                                    二週內
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault6">
+                                <label class="form-check-label" for="flexRadioDefault6">
+                                    一個月內
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <div class="dropdown filter filter-employment">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            職務性質
+                        </button>
+                        <div class="dropdown-menu">
+                            <h5>職務性質</h5> <!-- h5隨便給的 -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    不拘
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    全職
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    兼職
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    打工
+                                </label>
+                            </div>
+
+                            <h5>隱藏產業</h5> <!-- h5隨便給的 -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    隱藏派遣
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <div class="dropdown filter filter-salary">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            薪資待遇
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-salary">
+                            <h5>自訂薪資</h5> <!-- h5隨便給的 -->
+
+                            <div class="input-group">
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>月薪</option>
+                                    <option value="1">時薪</option>
+                                    <option value="2">日薪</option>
+                                    <option value="3">週薪</option>
+                                    <option value="4">年薪</option>
+                                    <option value="5">部分月薪</option>
+                                    <option value="6">論件計酬</option>
+                                </select>
+                            </div>
+
+                            <div class="input-salary-range">
+                                <input type="text" class="form-control" placeholder="如28000">
+                                <span class="mx-2">-</span>
+                                <input type="text" class="form-control" placeholder="選填">
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    包含面議
+                                </label>
+                            </div>
+
+                            <button class="btn btn-outline-secondary" type="button" id="button-salary-send">送出</button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <div class="dropdown filter filter-shifts">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            上班班別
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    日班
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    晚班
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    大夜班
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    假日班
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <div class="dropdown filter filter-experience">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            工作經驗
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    無經驗可
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    1年以下
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    1-3年
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    3-5年
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    5-10年
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    10年以上
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <div class="dropdown filter filter-feature">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            職缺特色
+                        </button>
+                        <div class="dropdown-menu">
+                            <h5>服務業最愛</h5>
+                            <div class="feature-items">
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        交通津貼
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        伙食津貼
+                                    </label>
+                                </div>
+                            </div>
+
+                            <h5>其他特色</h5>
+                            <div class="feature-items">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        高年終獎金
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        年薪70萬以上
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        年終14個月以上
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        獎金分紅機制
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="gap-line"></div>
+
+                    <!-- Button trigger modal -->
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">進階
+                        <img src="./images/filter.svg" alt=""></button>
+
+
+                    <div class="filter-clear">
+                        <button type="button" class="btn">清除條件</button>
+                    </div>
+                </div>
+
+                <div class="subscribe">
+                    <button type="button" class="btn-subscribe btn-outline-primary" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">訂閱</button>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-subscribe btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#subscribeModal">
+                        訂閱
+                    </button>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </header>
+
+
+    <div class="container">
+        <div class="search-result">
+            <div class="search-result-header">
+                <h2>全部工作職缺</h2>
+                <div class="order-by">
+                    <div>排序：</div>
+                    <button type="button" class="btn">預設</button>
+                    <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="按經歷排序有到無">經歷
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="按學歷排序高到低">學歷
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="custom-tooltip" data-bs-title="按刊登時間排序新到舊">刊登時間
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="jobs-group">
+                <div class="job-card job-recommend" job-id="yO0R0k" job-url="https://www.518.com.tw/job-yO0R0k.html">
+                    <div class="job-intro">
+                        <div class="job-title">(隔日匯185)晚班理貨員-近關渡大橋A2</div>
+                        <div class="company">
+                            <a href="https://www.518.com.tw/company-yvM8ME.html">力信股份有限公司
+                                <img src="./images/certified.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="job-salary">時薪 185元</div>
+                        <div class="job-conditions">
+                            <div class="job-area">台北市-北投區</div>
+                            <div class="gap-line"></div>
+                            <div class="job-experience">經歷不拘</div>
+                            <div class="gap-line"></div>
+                            <div class="job-education">學歷國中</div>
+                        </div>
+                        <div class="job-description">
+                            <p>工作內容：四輪推車卸貨並將貨品依項目分類擺放、需搬運、疊放 。
+
+                                -工作時間：
+                                A)16:00-20:30
+                                B)17:00-20:30
+                                -休假制度：週休二日
+                                -工作薪資：時薪185元隔日21點前匯款，假日順延</p>
+                        </div>
+                        <div class="job-tags">
+                            <div><span>關渡站走路7分鐘</span></div>
+                        </div>
+                    </div>
+
+                    <div class="job-favorite">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#jobFavoriteModal">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="job-apply col-auto">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#ApplyModal">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.0807 4.34136C16.1038 4.50268 16.0984 4.66637 16.0652 4.82505L16.0226 4.98179L12.5472 15.3597C12.3027 16.0899 11.5125 16.4836 10.7823 16.2391C10.5908 16.175 10.4161 16.0702 10.2698 15.9326L10.1656 15.8234L7.84504 13.1111C7.67779 12.9157 7.70068 12.6216 7.89616 12.4544C8.0672 12.308 8.31372 12.3072 8.48472 12.4403L8.55294 12.5055L10.8735 15.2177C10.928 15.2814 10.9987 15.3291 11.0782 15.3557C11.2936 15.4278 11.5247 15.3326 11.6303 15.1404L11.6638 15.0639L15.1392 4.68594C15.1621 4.61758 15.1687 4.5448 15.1585 4.47343C15.1263 4.24859 14.9375 4.08479 14.7183 4.07661L14.6349 4.08102L3.23596 5.71342C3.14414 5.72657 3.0584 5.76701 2.98985 5.8295C2.82462 5.98012 2.7936 6.223 2.90375 6.40787L2.95963 6.48312L6.03823 9.86153L12.286 5.9217C12.5036 5.78446 12.7913 5.8496 12.9285 6.0672C13.0505 6.26063 13.0126 6.5094 12.8498 6.65869L12.783 6.7097L6.41338 10.7271L6.39823 10.7335L5.88325 14.3881C5.86478 14.5188 5.89513 14.6518 5.96849 14.7615C6.11495 14.9807 6.39469 15.0575 6.62821 14.9561L6.71327 14.9096L7.31644 14.5065C7.53034 14.3636 7.81962 14.4211 7.96256 14.635C8.08962 14.8252 8.05829 15.0748 7.89953 15.2284L7.83409 15.2811L7.23092 15.6842C6.55656 16.1349 5.64455 15.9536 5.19389 15.2792C5.02192 15.0219 4.93638 14.7179 4.94725 14.4112L4.96077 14.2578L5.473 10.6233L2.27112 7.11075C1.78477 6.57723 1.79022 5.76879 2.26172 5.24236L2.36222 5.141C2.52748 4.99035 2.72591 4.88222 2.94034 4.82471L3.10389 4.79119L14.5028 3.15879C15.2651 3.04963 15.9716 3.57908 16.0807 4.34136Z"
+                                    fill="#FA1E50" />
+                            </svg>
+                            蛤快投</button>
+                    </div>
+
+                </div>
+                <div class="job-card job-new" job-id="yO0R0k" job-url="https://www.518.com.tw/job-yO0R0k.html">
+                    <div class="job-intro">
+                        <div class="job-title">(隔日匯185)晚班理貨員-近關渡大橋A2</div>
+                        <div class="company">
+                            <a href="https://www.518.com.tw/company-yvM8ME.html">力信股份有限公司</a>
+                        </div>
+                        <div class="job-salary">時薪 185元</div>
+                        <div class="job-conditions">
+                            <div class="job-area">台北市-北投區</div>
+                            <div class="gap-line"></div>
+                            <div class="job-experience">經歷不拘</div>
+                            <div class="gap-line"></div>
+                            <div class="job-education">學歷國中</div>
+                        </div>
+                        <div class="job-discription">
+                            <p>工作內容：四輪推車卸貨並將貨品依項目分類擺放、需搬運、疊放 。
+
+                                -工作時間：
+                                A)16:00-20:30
+                                B)17:00-20:30
+                                -休假制度：週休二日
+                                -工作薪資：時薪185元隔日21點前匯款，假日順延</p>
+                        </div>
+                        <div class="job-tags">
+                            <div><span>關渡站走路7分鐘</span></div>
+                        </div>
+                    </div>
+
+                    <div class="job-favorite">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#jobFavoriteModal">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="job-apply col-auto">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#ApplyModal">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.0807 4.34136C16.1038 4.50268 16.0984 4.66637 16.0652 4.82505L16.0226 4.98179L12.5472 15.3597C12.3027 16.0899 11.5125 16.4836 10.7823 16.2391C10.5908 16.175 10.4161 16.0702 10.2698 15.9326L10.1656 15.8234L7.84504 13.1111C7.67779 12.9157 7.70068 12.6216 7.89616 12.4544C8.0672 12.308 8.31372 12.3072 8.48472 12.4403L8.55294 12.5055L10.8735 15.2177C10.928 15.2814 10.9987 15.3291 11.0782 15.3557C11.2936 15.4278 11.5247 15.3326 11.6303 15.1404L11.6638 15.0639L15.1392 4.68594C15.1621 4.61758 15.1687 4.5448 15.1585 4.47343C15.1263 4.24859 14.9375 4.08479 14.7183 4.07661L14.6349 4.08102L3.23596 5.71342C3.14414 5.72657 3.0584 5.76701 2.98985 5.8295C2.82462 5.98012 2.7936 6.223 2.90375 6.40787L2.95963 6.48312L6.03823 9.86153L12.286 5.9217C12.5036 5.78446 12.7913 5.8496 12.9285 6.0672C13.0505 6.26063 13.0126 6.5094 12.8498 6.65869L12.783 6.7097L6.41338 10.7271L6.39823 10.7335L5.88325 14.3881C5.86478 14.5188 5.89513 14.6518 5.96849 14.7615C6.11495 14.9807 6.39469 15.0575 6.62821 14.9561L6.71327 14.9096L7.31644 14.5065C7.53034 14.3636 7.81962 14.4211 7.96256 14.635C8.08962 14.8252 8.05829 15.0748 7.89953 15.2284L7.83409 15.2811L7.23092 15.6842C6.55656 16.1349 5.64455 15.9536 5.19389 15.2792C5.02192 15.0219 4.93638 14.7179 4.94725 14.4112L4.96077 14.2578L5.473 10.6233L2.27112 7.11075C1.78477 6.57723 1.79022 5.76879 2.26172 5.24236L2.36222 5.141C2.52748 4.99035 2.72591 4.88222 2.94034 4.82471L3.10389 4.79119L14.5028 3.15879C15.2651 3.04963 15.9716 3.57908 16.0807 4.34136Z"
+                                    fill="#FA1E50" />
+                            </svg>蛤快投</button>
+                    </div>
+
+                </div>
+                <div class="job-card job-hurry" job-id="yO0R0k" job-url="https://www.518.com.tw/job-yO0R0k.html">
+                    <div class="job-intro">
+                        <div class="job-title">(隔日匯185)晚班理貨員-近關渡大橋A2</div>
+                        <div class="company">
+                            <a href="https://www.518.com.tw/company-yvM8ME.html">力信股份有限公司</a>
+                        </div>
+                        <div class="job-salary">時薪 185元</div>
+                        <div class="job-conditions">
+                            <div class="job-area">台北市-北投區</div>
+                            <div class="gap-line"></div>
+                            <div class="job-experience">經歷不拘</div>
+                            <div class="gap-line"></div>
+                            <div class="job-education">學歷國中</div>
+                        </div>
+                        <div class="job-discription">
+                            <p>工作內容：四輪推車卸貨並將貨品依項目分類擺放、需搬運、疊放 。
+
+                                -工作時間：
+                                A)16:00-20:30
+                                B)17:00-20:30
+                                -休假制度：週休二日
+                                -工作薪資：時薪185元隔日21點前匯款，假日順延</p>
+                        </div>
+                        <div class="job-tags">
+                            <div><span>關渡站走路7分鐘</span></div>
+                        </div>
+                    </div>
+
+                    <div class="job-favorite">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#jobFavoriteModal">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="job-apply col-auto">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#ApplyModal">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.0807 4.34136C16.1038 4.50268 16.0984 4.66637 16.0652 4.82505L16.0226 4.98179L12.5472 15.3597C12.3027 16.0899 11.5125 16.4836 10.7823 16.2391C10.5908 16.175 10.4161 16.0702 10.2698 15.9326L10.1656 15.8234L7.84504 13.1111C7.67779 12.9157 7.70068 12.6216 7.89616 12.4544C8.0672 12.308 8.31372 12.3072 8.48472 12.4403L8.55294 12.5055L10.8735 15.2177C10.928 15.2814 10.9987 15.3291 11.0782 15.3557C11.2936 15.4278 11.5247 15.3326 11.6303 15.1404L11.6638 15.0639L15.1392 4.68594C15.1621 4.61758 15.1687 4.5448 15.1585 4.47343C15.1263 4.24859 14.9375 4.08479 14.7183 4.07661L14.6349 4.08102L3.23596 5.71342C3.14414 5.72657 3.0584 5.76701 2.98985 5.8295C2.82462 5.98012 2.7936 6.223 2.90375 6.40787L2.95963 6.48312L6.03823 9.86153L12.286 5.9217C12.5036 5.78446 12.7913 5.8496 12.9285 6.0672C13.0505 6.26063 13.0126 6.5094 12.8498 6.65869L12.783 6.7097L6.41338 10.7271L6.39823 10.7335L5.88325 14.3881C5.86478 14.5188 5.89513 14.6518 5.96849 14.7615C6.11495 14.9807 6.39469 15.0575 6.62821 14.9561L6.71327 14.9096L7.31644 14.5065C7.53034 14.3636 7.81962 14.4211 7.96256 14.635C8.08962 14.8252 8.05829 15.0748 7.89953 15.2284L7.83409 15.2811L7.23092 15.6842C6.55656 16.1349 5.64455 15.9536 5.19389 15.2792C5.02192 15.0219 4.93638 14.7179 4.94725 14.4112L4.96077 14.2578L5.473 10.6233L2.27112 7.11075C1.78477 6.57723 1.79022 5.76879 2.26172 5.24236L2.36222 5.141C2.52748 4.99035 2.72591 4.88222 2.94034 4.82471L3.10389 4.79119L14.5028 3.15879C15.2651 3.04963 15.9716 3.57908 16.0807 4.34136Z"
+                                    fill="#FA1E50" />
+                            </svg>蛤快投</button>
+                    </div>
+
+                </div>
+                <div class="job-card job-normal" job-id="yO0R0k" job-url="https://www.518.com.tw/job-yO0R0k.html">
+                    <div class="job-intro">
+                        <div class="job-title">(隔日匯185)晚班理貨員-近關渡大橋A2</div>
+                        <div class="company">
+                            <a href="https://www.518.com.tw/company-yvM8ME.html">力信股份有限公司</a>
+                        </div>
+                        <div class="job-salary">時薪 185元</div>
+                        <div class="job-conditions">
+                            <div class="job-area">台北市-北投區</div>
+                            <div class="gap-line"></div>
+                            <div class="job-experience">經歷不拘</div>
+                            <div class="gap-line"></div>
+                            <div class="job-education">學歷國中</div>
+                        </div>
+                        <div class="job-discription">
+                            <p>工作內容：四輪推車卸貨並將貨品依項目分類擺放、需搬運、疊放 。
+
+                                -工作時間：
+                                A)16:00-20:30
+                                B)17:00-20:30
+                                -休假制度：週休二日
+                                -工作薪資：時薪185元隔日21點前匯款，假日順延</p>
+                        </div>
+                        <div class="job-tags">
+                            <div><span>關渡站走路7分鐘</span></div>
+                        </div>
+                    </div>
+
+                    <div class="job-favorite">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#jobFavoriteModal">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="job-apply col-auto">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#ApplyModal">
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.0807 4.34136C16.1038 4.50268 16.0984 4.66637 16.0652 4.82505L16.0226 4.98179L12.5472 15.3597C12.3027 16.0899 11.5125 16.4836 10.7823 16.2391C10.5908 16.175 10.4161 16.0702 10.2698 15.9326L10.1656 15.8234L7.84504 13.1111C7.67779 12.9157 7.70068 12.6216 7.89616 12.4544C8.0672 12.308 8.31372 12.3072 8.48472 12.4403L8.55294 12.5055L10.8735 15.2177C10.928 15.2814 10.9987 15.3291 11.0782 15.3557C11.2936 15.4278 11.5247 15.3326 11.6303 15.1404L11.6638 15.0639L15.1392 4.68594C15.1621 4.61758 15.1687 4.5448 15.1585 4.47343C15.1263 4.24859 14.9375 4.08479 14.7183 4.07661L14.6349 4.08102L3.23596 5.71342C3.14414 5.72657 3.0584 5.76701 2.98985 5.8295C2.82462 5.98012 2.7936 6.223 2.90375 6.40787L2.95963 6.48312L6.03823 9.86153L12.286 5.9217C12.5036 5.78446 12.7913 5.8496 12.9285 6.0672C13.0505 6.26063 13.0126 6.5094 12.8498 6.65869L12.783 6.7097L6.41338 10.7271L6.39823 10.7335L5.88325 14.3881C5.86478 14.5188 5.89513 14.6518 5.96849 14.7615C6.11495 14.9807 6.39469 15.0575 6.62821 14.9561L6.71327 14.9096L7.31644 14.5065C7.53034 14.3636 7.81962 14.4211 7.96256 14.635C8.08962 14.8252 8.05829 15.0748 7.89953 15.2284L7.83409 15.2811L7.23092 15.6842C6.55656 16.1349 5.64455 15.9536 5.19389 15.2792C5.02192 15.0219 4.93638 14.7179 4.94725 14.4112L4.96077 14.2578L5.473 10.6233L2.27112 7.11075C1.78477 6.57723 1.79022 5.76879 2.26172 5.24236L2.36222 5.141C2.52748 4.99035 2.72591 4.88222 2.94034 4.82471L3.10389 4.79119L14.5028 3.15879C15.2651 3.04963 15.9716 3.57908 16.0807 4.34136Z"
+                                    fill="#FA1E50" />
+                            </svg>蛤快投</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a class="page"><i class="fa-solid fa-angle-left"></i> 上一頁</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                        <a class="page" href="#">下一頁 <i class="fa-solid fa-angle-right"></i></a>
+                    </li>
+                    <span>第1/50頁</span>
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="fast-filters-and-map">
+            <div class="fast-filters">
+                <div>
+                    <span>新鮮人看過來！</span>
+                    <!-- <a href="#" class="btn" role="button" data-bs-toggle="button">高薪四萬休假日</a> -->
+                    <a href="#" class="btn">💰 高薪四萬休假日
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn">🍚 伙食津貼吃飽飽
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn">👕 門市員購好優惠
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn">💼 無工作經驗免煩惱
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="search-map">
+                <p>想睡飽？
+                    <a href="">用地圖找離家近工作</a>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+    </footer>
+
+    <!-- 進階的右側Modal + Scrollspy Modal -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <!-- <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div> -->
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-4">
+                    <div id="list-example" class="list-group">
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">薪資待遇</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">出勤管理</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">經歷身分</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">公司相關</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-5">排除條件</a>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                        class="scrollspy-example" tabindex="0">
+                        <h4 id="list-item-1">薪資待遇</h4>
+                        <h5>支薪方式</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck1">領現</label>
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck2">匯款</label>
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck3">LINE
+                            Pay</label>
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck4">街口支付</label>
+                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck5">支票</label>
+
+                        <h4 id="list-item-2">出勤管理</h4>
+                        <h5>休假制度</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck6">週休二日</label>
+                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck7">隔週休</label>
+                        <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck8">依公司規定</label>
+
+                        <h5>空班制度(單選)</h5>
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="option1">有空班</label>
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="option2">無空班</label>
+
+                        <h5>排班制度</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck9">排班制</label>
+                        <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck10">輪班制</label>
+
+                        <h5>管理責任</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck11">無</label>
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck12">4人以下</label>
+                        <input type="checkbox" class="btn-check" id="btncheck13" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck13">5-8人</label>
+                        <input type="checkbox" class="btn-check" id="btncheck14" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck14">9-12人</label>
+                        <input type="checkbox" class="btn-check" id="btncheck15" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck15">13人以上
+                        </label>
+                        <input type="checkbox" class="btn-check" id="btncheck16" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck16">人數未定</label>
+
+                        <h5>員工制服</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck17" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck17">有制服</label>
+
+                        <h4 id="list-item-3">經歷身分</h4>
+                        <h5>學歷限制</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck18" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck18">國中以下</label>
+                        <input type="checkbox" class="btn-check" id="btncheck19" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck19">高中職</label>
+                        <input type="checkbox" class="btn-check" id="btncheck20" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck20">專科</label>
+                        <input type="checkbox" class="btn-check" id="btncheck21" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck21">大學</label>
+                        <input type="checkbox" class="btn-check" id="btncheck22" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck22">研究所以上</label>
+
+                        <h5>求職身分</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck23" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck23">二度就業</label>
+                        <input type="checkbox" class="btn-check" id="btncheck24" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck24">中高齡(45-65歲)</label>
+                        <input type="checkbox" class="btn-check" id="btncheck25" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck25">身心障礙者</label>
+                        <input type="checkbox" class="btn-check" id="btncheck26" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck26">研發替代役</label>
+
+                        <h4 id="list-item-4">公司相關</h4>
+                        <h5>近捷運站</h5>
+                        <h5>產業類別</h5>
+
+                        <h5>公司福利</h5>
+                        <input type="checkbox" class="btn-check" id="btncheck27" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck27">員工旅遊</label>
+                        <input type="checkbox" class="btn-check" id="btncheck28" autocomplete="off">
+                        <label class="btn btn-outline-primary col-4 mb-3" for="btncheck28">上市櫃公司</label>
+                        <h4 id="list-item-5">排除條件</h4>
+                        <h5>排除公司關鍵字</h5>
+                        <input type="text" class="form-control" placeholder="以,區隔，例如：保險,派遣" aria-label="exclude-company"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">清除</button>
+            <button type="button" class="btn btn-primary">確認送出</button>
+        </div>
+    </div>
+
+    <!-- 訂閱的由下往上Modal -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+            ...
+        </div>
+    </div>
+
+    <!-- 訂閱的正中間Modal -->
+    <div class="modal" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <img src="./images/subscribe_default.svg" alt="">
+                
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="subscribeModalLabel">新職缺上架時通知我</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>不錯過好工作<br>立即訂閱可收到信件提醒~</p>
+                    <input type="email" class="form-control" placeholder="Email">
+                    <button type="button" class="btn btn-primary">立即免費訂閱</button>
+                </div>
+                <div class="modal-footer">
+                    <p>送出即接受並同意遵守此
+                        <a href="https://www.518.com.tw/help-helpser.html?p=pris" target="_blank">隱私政策</a>
+                        中個人資料所有條款。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 收藏的Modal -->
+    <div class="modal fade" id="jobFavoriteModal" tabindex="-1" aria-labelledby="jobFavoriteModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="jobFavoriteModalLabel">收藏職缺</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>存放資料夾</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            新增
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            選擇
+                        </label>
+                    </div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>資料夾1</option>
+                        <option value="1">資料夾2</option>
+                        <option value="2">資料夾3</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 蛤快投的Modal -->
+    <div class="modal fade" id="ApplyModal" tabindex="-1" aria-labelledby="ApplyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ApplyModalLabel">蛤快投</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>應徵工作</h2>
+                    <p>(隔日匯185)晚班理貨員-近關渡大橋A2<br>
+                        力信股份有限公司</p>
+                    <div class="resume-selection">
+                        <h2>履歷選擇</h2>
+                        <a href="">預覽履歷</a>
+                    </div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>求職履歷</option>
+                        <!-- 有不同的履歷嗎? -->
+                        <option value="1">求職履歷2</option>
+                    </select>
+                    <div class="self-introduction">
+                        <h2>自我推薦</h2>
+                        <a href="">設定範本</a>
+                    </div>
+                    <select class="form-select mb-2" aria-label="Default select example">
+                        <option value="1">自行填寫</option>
+                        <option selected>【範本】自我推薦</option>
+
+                    </select>
+                    <textarea class="form-control" aria-label="With textarea" maxlength="200"></textarea>
+                    <span>xx/200</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            儲存範本
+                        </label>
+                        <input type="text" class="form-control" placeholder="輸入範本名稱"
+                            aria-label="Text input with checkbox">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+
+</html>
