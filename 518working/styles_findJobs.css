@@ -1,10 +1,10 @@
-/* header 搜尋欄 CSS start */
+/* 搜尋欄 CSS start */
 .search-group {
     padding: 0 70px;
     background-color: #fff;
 }
 
-header:after {
+.search-header:after {
     content: "";
     width: 100%;
     height: 2px;
@@ -144,7 +144,7 @@ header:after {
     text-align: left;
 }
 
-/* header 搜尋欄 CSS end */
+/* 搜尋欄 CSS end */
 
 /* 搜尋結果 CSS start */
 .search-result {
@@ -422,3 +422,4 @@ p {
 }
 
 /* 分頁 CSS end */
+
