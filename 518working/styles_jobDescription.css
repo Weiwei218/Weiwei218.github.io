@@ -453,6 +453,21 @@ a {
     margin-bottom: 4px;
 }
 
+
+.job-card .new-job:before{
+    content: "NEW";
+    display: inline-block;
+    line-height: 2;
+    font-weight: bold;
+    background: #2369FF;
+    color: #fff;    
+    padding: 0 7px;
+    border-radius: 4px;
+    transform: scale(0.8);
+    position: relative;
+    left: -4px;
+}
+
 .job-card-company {
     font-weight: 400;
     font-size: 12px;
