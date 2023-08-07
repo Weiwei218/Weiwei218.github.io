@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +12,11 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
   </head>
   <style>
     @media (max-width: 991px) {
@@ -35,89 +41,85 @@
       margin: auto;
       justify-content: center;
       text-align: center;
-      width: 45%;
+      max-width: 100%;
     }
 
-    a {
-      text-decoration: none;
+    .full-content {
+      max-width: 45%;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .nav-item {
+      margin: 0 2%;
     }
 
     .account-info {
       border: 1px solid #dcdcdc;
       padding: 0 5% 5% 5%;
     }
-    .content-tabset {
-      width: 45%;
-      margin: auto;
+
+    .line-button {
+      padding-left: 0;
+      justify-content: center;
+      position: relative;
+      background-color: #00c300;
+      border: none;
+    }
+
+    .line-button:hover {
+      background-color: #01d333;
+    }
+
+    .line-button:hover .line-image {
+      filter: brightness(1.1);
+      transition: 0.1s 0.1s;
+    }
+
+    .line-image {
+      position: absolute;
+      left: 0;
+      margin-left: 0px;
+      width: 5%;
+      height: auto;
     }
 
     .content-tabset ul {
-      display: flex;
-      justify-content: space-between;
-      list-style-type: none;
-      padding: 20px;
-    }
-    
-    /* .btn-block.line-login {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      background-color: #00c300;
-      color: #fff;
-    } */
-    /* .btn-block.line-login img {
-      width: 7%;
-      height: auto;
-    } */
-
-    /* .line-login-container {
-      width: 100%;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      justify-content: flex-start;
-      background-color: #00c300;
-      border-radius: 5px;
-    } */
-
-    /* .line-login-container .login-btn {
-      padding: 5px;
-      margin: auto;
-      justify-content: center;
-      text-align: center;
-    }  */
-
-    .btn-line-login{
-      display: flex;
-      justify-content: center;
-      justify-content: flex-start;
-      align-items: center;
-      background-color: #00c300;
+      padding: 5% 0;
     }
 
-    .btn-line-login:hover{
-      opacity: 0.8;
+    #action-btn {
+      border: none;
+      background-color: #3393fa;
     }
 
-    .btn-line-login img{
-      width: 40px;
-      height: 40px;
+    #action-btn:hover {
+      background-color: #60a9f8;
     }
 
-    .btn-line-login span{      
-      color: #fff;
-      line-height: 1.43;
-      font-weight: 600;
-      font-size: 14px;
-      width: 100%;
-      text-align: center;
-      margin-left: -40px;
-    }
-
-    .forgot-link-container{
+    .forgot-link-container {
       padding-top: 5%;
     }
+    .forgot-link-container a {
+      text-decoration: none;
+      color: rgb(129, 129, 129);
+    }
+
+    .forgot-link-container a:hover {
+      color: rgb(94, 94, 94);
+    }
+
+    .input-group{
+      display: flex;
+      /* flex-wrap: nowrap; */
+      /* flex-direction: column; */
+    }
+
+    .password-notice p{
+      /* width: ; */
+    }
+
+ 
   </style>
 
   <body>
@@ -125,6 +127,7 @@
       <div class="container">
         <div class="col-sm-12">
           <div class="full-content">
+            <!-- 優惠標語 -->
             <div class="discount-slogan">
               <p
                 style="
@@ -138,63 +141,184 @@
                 【原註冊會員】<br />無須重新註冊，直接點選「忘記密碼」<br />登入完成送$100購物金！<br /><br />【新會員好禮】<br />首次註冊即贈$100購物金<br />加入LINE好友送$300折價券
               </p>
             </div>
-            <div class="account-info">
+            <!-- 登入功能區塊 -->
+            <div class="account-info" style="font-size: 14px">
               <div class="content-tabset">
                 <ul class="nav nav-pills nav-fill">
-                  <li class="nav-item">
+                  <li id="sign-up-btn" class="nav-item">
                     <a class="nav-link" href="#">註冊會員</a>
                   </li>
-                  <li class="nav-item">
+                  <li id="log-in-btn" class="nav-item">
                     <a class="nav-link" href="#">會員登入</a>
                   </li>
                 </ul>
               </div>
+              <!-- 登入表單區塊 -->
               <div class="form-container">
-                <!-- <div class="line-login-container"> -->
-                  <!-- <div class="btn-block line-login"> -->
-                    <a class="btn-line-login" href="">
-                      <img
-                      src="https://static.shoplineapp.com/web/assets/misc/line_login.png"
-                    />
-                    <span>使用LINE登入</span>
-                    </a>                   
-                  <!-- </div> -->
-                <!-- </div> -->
-                <hr />
-                <div class="tabset-title"><p>請輸入您的登入資訊</p></div>
-                <form>
-                  <div class="input-group input-group-sm mb-3">
-                    <input
-                      class="form-control form-control-lg"
-                      type="text"
-                      placeholder="電郵或手機號碼"
-                      aria-label=".form-control-lg example"
-                    />
-                  </div>
-                  <div class="input-group input-group-sm mb-3">
-                    <input
-                      class="form-control form-control-lg"
-                      type="text"
-                      placeholder="密碼"
-                      aria-label=".form-control-lg example"
-                    />
-                  </div>
-                  <div class="actions">
-                    <div class="d-grid gap-2">
-                      <button class="btn btn-primary" type="button">
-                        開始購物吧！
+                <!-- LINE註冊按鈕 -->
+                <div class="line-login-container">
+                  <div class="btn-block line-login">
+                    <div
+                      class="d-flex justify-content-start align-items-center"
+                    >
+                      <button
+                        class="btn btn-primary d-flex align-items-center w-100 line-button"
+                        type="button"
+                        style="font-size: 14px"
+                      >
+                        <img
+                          class="line-image"
+                          src="https://static.shoplineapp.com/web/assets/misc/line_login.png"
+                          style="margin-right: 10px"
+                        />
+                        使用LINE註冊
                       </button>
                     </div>
                   </div>
-                  <div class="forgot-link-container">
-                    <a href="">忘記密碼?</a>
+                </div>
+                <hr />
+                <div class="sign-up-form">
+                  <div class="input-group">
+                    <div id="sing-up-username" class="input-group mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="用戶名"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
+                    <div id="sing-up-phone" class="input-group mb-3">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="0912 345 678"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        minlength="8"
+                        maxlength="20"
+                      />
+                    </div>
+                    <div id="sing-up-password" class="input-group mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="密碼"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        minlength="8"
+                        maxlength="20"
+                      />
+                    </div>
+                    <div class="password-notice input-group" >
+                      <p>至少8個字元</p>
+                    </div>
+                    <div class="user-gender">
+                      <section class="user-gender-options">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>性別 (選填)</option>
+                          <option value="1">男</option>
+                          <option value="2">女</option>
+                          <option value="3">不透露</option>
+                        </select>
+                      </section>
+                    </div>
+                    <label class="text-left">
+                      <input type="checkbox" />
+                      <span class="marketing-news"
+                        >我願意接收 vacanza
+                        的最新消息、優惠及服務推廣相關資訊</span
+                      >
+                    </label>
                   </div>
-                </form>
+                  <div class="social-message-btn">
+                    <div class="line-message-btn">
+                      <button type="button" class="btn btn-outline-success">
+                        傳送到LINE
+                      </button>
+                    </div>
+                    <div class="facebook-message-btn">
+                      <button type="button" class="btn btn-outline-primary">
+                        傳送到Messenger
+                      </button>
+                    </div>
+                  </div>
+                  <hr class="divider" />
+                  <label class="text-left">
+                    <input
+                      class="text-left signup-page-checkbox"
+                      type="checkbox"
+                    />
+                    我同意網站<a
+                      class="agree-highlight"
+                      href="/about/terms"
+                      target="_blank"
+                      >服務條款</a
+                    >及<a
+                      class="agree-highlight"
+                      href="/about/privacy-policy"
+                      target="_blank"
+                      >隱私權政策</a
+                    >
+                  </label>
+                  <div class="submit-btn">
+                    <div class="d-grid gap-2">
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                        disabled="disabled"
+                      >
+                        立即加入!
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
