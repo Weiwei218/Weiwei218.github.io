@@ -193,16 +193,15 @@ a {
     width: 24px;
     height: 24px;
     background: url(./images/ic_heart_off_darkblue20.svg) no-repeat center/contain;
+    position: relative;
+    top: 32px;
 }
 
 .search-result .job-recommend,
 .search-result .job-hurry,
 .search-result .job-new,
 .search-result .job-normal {
-    /* padding: 16px 16px 16px 60px; */
     position: relative;
-    /* display: flex; */
-    /* box-sizing: border-box; */
 }
 
 .search-result .job-recommend {
@@ -214,14 +213,12 @@ a {
 .job-hurry::before {
     font-weight: bold;
     padding-left: 25px;
-    /* height: 18px; */
-    top: 47px;
+    top: 14px;
     right: 14px;
     font-size: 16px;
     position: absolute;
-    background-size: contain;
     background-repeat: no-repeat;
-    /* background-position: left center; */
+    background-position: left center;
 }
 
 .job-new::before {
@@ -245,11 +242,11 @@ a {
 .job-normal::before {
     content: "08/02";
     position: absolute;
-    top: 20px;
-    left: 16px;
-    font-size: 13px;
-    line-height: 19.5px;
     color: #80858C;
+    padding-left: 25px;
+    top: 18px;
+    right: 14px;
+    font-size: 13px;
 }
 
 
