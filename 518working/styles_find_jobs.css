@@ -69,6 +69,7 @@ a {
 }
 
 .for-sp .search-input:focus-visible{
+    outline: 0;
     box-shadow: none;
     --bs-focus-ring-color:transparent;
 }
