@@ -60,18 +60,16 @@ a {
     background-color: #fff;
     font-size: 18px;
     padding: 5px 0px 5px 28px;
-    border: 1px solid #FA3461;
+    border: none;
     border-radius: 1em;
-    vertical-align: middle;
-    width: 100%;
+    /* width: 100%; */
     overflow: hidden;
     text-overflow: ellipsis;    
 }
 
-.for-sp .search-input:focus-visible{
-    outline: 0;
+.for-sp .search-input input:focus{
+    color: #FA3461;
     box-shadow: none;
-    --bs-focus-ring-color:transparent;
 }
 .for-sp .search-bar .member-center{
     margin: 0 5px 0 10px;
