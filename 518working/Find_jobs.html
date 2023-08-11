@@ -12,142 +12,140 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
-    <link rel="stylesheet" href="styles_find_jobs.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles_find_jobs.css">
+
 
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <!-- <span class="navbar-toggler-icon"></span> -->
-                    <i class="fa-solid fa-chevron-left"></i>
-                    首頁
-                </button>
 
-                <div class="nav-container">
-                    <div class="logo">
-                        <a class="haban-logo" href="#">
-                            <picture>
-                                <source type="image/webp" srcset="./img/logo_666_b_slogan.png"
-                                    media="(min-width: 992px)">
-                                <img class="haban-logo-main" src="./img/logo_666_b_slogan_white.png" alt="666蛤班">
-                            </picture>
-                            <img class="haban-logo-mascot" src="./img/logo_666_b_ha_head.png" alt="">
-                        </a>
-                    </div>
-
-
-                    <button type="button" class="login-for-sp" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <div class="item-group collapse navbar-collapse" id="navbarTogglerDemo03">
-
-                        <ul class="item-list navbar-nav ms-auto mb-2 mb-lg-0">
-                            <button class="btn-close" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
-                                aria-expanded="true" aria-label="Close">
-                            </button>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">找工作</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">媒合見證</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" target="_blank">
-                                    <img class="comp_banner" src="./img/img_tooltip_sale.svg" alt="徵才限時0元">
-                                </a>
-                                <a class="ad-plan nav-link" href="#">徵才方案</a>
-                            </li>
-                            <li class="is-m">
-                                <a href="#" class="comp_href">
-                                    <img src="./img/img_menu_sale.png" alt="徵才限時 1 元，前往了解 >">
-                                </a>
-                                <img class="comp_img" src="./img/menu_bg_ha_activity@2x.png" alt="年度代言人 浩子"
-                                    loading="lazy">
-                            </li>
-                        </ul>
-
-                        <div class="member-list">
-                            <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="icon material-symbols-outlined">
-                                            business_center
-                                        </span>
-                                        求職會員
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="material-symbols-outlined">person</span>
-                                                求職註冊
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="material-symbols-outlined">login</span>
-                                                求職登入
-                                            </a>
-                                        </li>
-                                    </ul>
+    
+                    <div class="nav-container">
+                        <div class="logo">
+                            <a class="haban-logo" href="#">
+                                <picture>
+                                    <source type="image/webp" srcset="./img/logo_666_b_slogan.png"
+                                        media="(min-width: 992px)">
+                                    <img class="haban-logo-main" src="./img/logo_666_b_slogan_white.png" alt="666蛤班">
+                                </picture>
+                                <img class="haban-logo-mascot" src="./img/logo_666_b_ha_head.png" alt="">
+                            </a>
+                        </div>
+                        
+                        <button type="button" class="login-for-sp" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <span class="material-symbols-outlined">
+                                person
+                            </span>
+                        </button>
+    
+                        <div class="item-group collapse navbar-collapse" id="navbarTogglerDemo03">
+    
+                            <ul class="item-list navbar-nav ms-auto mb-2 mb-lg-0">
+                                <button class="btn-close" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+                                    aria-expanded="true" aria-label="Close">
+                                </button>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">找工作</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <span class="icon material-symbols-outlined">
-                                            home_work
-                                        </span>
-                                        企業徵才
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">媒合見證</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" target="_blank">
+                                        <img class="comp_banner" src="./img/img_tooltip_sale.svg" alt="徵才限時0元">
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="material-symbols-outlined">person</span>
-                                                企業註冊
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <span class="material-symbols-outlined">login</span>
-                                                企業登入
-                                            </a>
-                                        </li>
-                                        <hr>
-                                        <li>
-
-                                            <a class="dropdown-item" href="#">
-                                                <span class="material-symbols-outlined">storefront</span>
-                                                企業方案
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <a class="ad-plan nav-link" href="#">徵才方案</a>
+                                </li>
+                                <li class="is-m">
+                                    <a href="#" class="comp_href">
+                                        <img src="./img/img_menu_sale.png" alt="徵才限時 1 元，前往了解 >">
+                                    </a>
+                                    <img class="comp_img" src="./img/menu_bg_ha_activity@2x.png" alt="年度代言人 浩子"
+                                        loading="lazy">
                                 </li>
                             </ul>
+    
+                            <div class="member-list">
+                                <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span class="icon material-symbols-outlined">
+                                                business_center
+                                            </span>
+                                            求職會員
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="material-symbols-outlined">person</span>
+                                                    求職註冊
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="material-symbols-outlined">login</span>
+                                                    求職登入
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <span class="icon material-symbols-outlined">
+                                                home_work
+                                            </span>
+                                            企業徵才
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="material-symbols-outlined">person</span>
+                                                    企業註冊
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="material-symbols-outlined">login</span>
+                                                    企業登入
+                                                </a>
+                                            </li>
+                                            <hr>
+                                            <li>
+    
+                                                <a class="dropdown-item" href="#">
+                                                    <span class="material-symbols-outlined">storefront</span>
+                                                    企業方案
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+    
+    
+    
+    
                 </div>
-
-
-
-
-            </div>
-        </nav>
+            </nav> -->
     </header>
 
     <!-- sp-advance-filter-Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -217,48 +215,66 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
     <section class="top-section">
-        <div class="container">
+        
             <div class="top-section-wrap">
 
                 <div class="search-part">
                     <!-- for sp -->
                     <div class="for-sp">
-                        <div class="search-option col-auto">
-                            <div id="location-distance" data-bs-toggle="modal" data-bs-target="#location-distance-md">
-                                <div class="wrap">
-                                    地區<span class="function-btn-separator">/</span>
-                                    距離</div>
+                        <div class="search-bar">
+                            <a class="btn to-index" href="#" role="button">
+                                <i class="fa-solid fa-chevron-left"></i>
+                                首頁
+                            </a>
+                            <div class="search-input">
+                                <input type="search" placeholder="試試搜尋職務、公司">
                             </div>
-                            <div id="job-category" data-bs-toggle="modal" data-bs-target="#job-category-md">
-                                <div class="wrap">職務類別</div>
-
-                            </div>
-                            <!-- <button >
-                                Launch demo modal
-                              </button> -->
-                            <i type="button" class="advance-filters" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"></i>
-
-
+                            <a class="btn member-center" href="#" role="button">
+                                <img src="./images/ic_account.svg" alt="" class="login-for-sp1">
+                            </a>
+                           
                         </div>
-                        <form class="search-bar row g-0">
+                        <div class="search-filters-and-subscribe">
+                            <div class="search-filters">
+                                <div id="location-distance" data-bs-toggle="modal"
+                                    data-bs-target="#location-distance-md">
+                                    地區/距離
+                                </div>
+                                <div id="job-category" data-bs-toggle="modal" data-bs-target="#job-category-md">
+                                    職務類別
+                                </div>
+                                <div class="advance-filters">
+                                    進階<span>1</span>
+                                    <img src="./images/ic_filter_white700.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="subscribe">
+                                <a type="button" class="btn btn-subscribe" data-bs-toggle="modal"
+                                    data-bs-target="#subscribeModal">
+                                    訂閱
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <!-- <form class="search-bar row g-0">
                             <div class="col-auto">
                                 <div class="search-group">
                                     <span class="material-symbols-outlined">
                                         search
                                     </span>
                                     <label for="input-search" class="visually-hidden">Search</label>
-                                    <input type="text" class="form-control" id="input-search" placeholder="試試搜尋職務/公司">
-                                    <input type="search" id="search-input" placeholder="在這裡輸入搜尋內容">
-                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                    <input type="text" class="form-control" id="input-search"
+                                        placeholder="試試搜尋職務/公司">
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-primary">搜尋</button>
                             </div>
-                        </form>
+                        </form> -->
                     </div>
                     <!-- for pc -->
                     <form class="search-bar for-pc row g-0">
@@ -289,7 +305,7 @@
 
 
                 </div>
-            </div>
+         
     </section>
 
 
@@ -643,7 +659,7 @@
             </div>
 
             <div class="jobs-group">
-                
+
                 <div class="job-card job-recommend" job-id="yO0R0k" job-url="https://www.518.com.tw/job-yO0R0k.html">
                     <div class="job-intro">
                         <h3 class="job-title">(隔日匯185)晚班理貨員-近關渡大橋A2AAAAAAAAAAAAAA</h3>
@@ -908,9 +924,9 @@
                     </div>
 
                 </div>
-  
-                
- 
+
+
+
             </div>
 
 
