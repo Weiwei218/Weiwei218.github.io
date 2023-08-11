@@ -62,13 +62,13 @@ a {
     padding: 5px 0px 5px 28px;
     border: none;
     border-radius: 1em;
-    /* width: 100%; */
     overflow: hidden;
-    text-overflow: ellipsis;    
+    text-overflow: ellipsis;   
+    color: #FA3461; 
 }
 
 .for-sp .search-input input:focus{
-    color: #FA3461;
+    /* color: #FA3461; */
     box-shadow: none;
 }
 .for-sp .search-bar .member-center{
