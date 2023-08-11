@@ -67,6 +67,11 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;    
 }
+
+.for-sp .search-input:focus-visible{
+    box-shadow: none;
+    --bs-focus-ring-color:transparent;
+}
 .for-sp .search-bar .member-center{
     margin: 0 5px 0 10px;
     padding: 0;
