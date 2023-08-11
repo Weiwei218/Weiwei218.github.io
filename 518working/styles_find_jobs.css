@@ -54,7 +54,8 @@ a {
     font-size: 18px;
     padding: 5px 0px 5px 28px;
     border: 1px solid #FA3461;
-    border-radius: 15px;
+    border-radius: 1em;
+    vertical-align: middle;
     width: 100%;
     
 }
@@ -326,7 +327,19 @@ a {
     font-size: 13px;
 }
 
+.job-loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px;
+}
 
+.spinner-job-loading{
+    width: 1rem;
+    height: 1rem;
+    border-style: dotted;
+}
 /* 
 .search-group {
     width: 1140px;
