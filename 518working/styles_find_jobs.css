@@ -52,12 +52,13 @@ a {
     background-position: 10px;
     background-color: #fff;
     font-size: 18px;
-    padding: 5px 0px 5px 28px;
+    padding: 5px 0px 10px 28px;
     border: 1px solid #FA3461;
     border-radius: 1em;
     vertical-align: middle;
     width: 100%;
-    
+    overflow: hidden;
+    text-overflow: ellipsis;    
 }
 .for-sp .search-bar .member-center{
     margin: 0 5px 0 10px;
@@ -123,6 +124,7 @@ a {
     align-items: center;
     padding: 0 10px;
     margin-top: -10px;
+    box-sizing: border-box;
 }
 
 .for-sp .search-filters{
