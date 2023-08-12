@@ -32,13 +32,63 @@ a {
 
 .subheader-btn-group{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     bottom: 0;
+    left: 0;
     background-color: #fff;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     z-index: 1030;
+}
+
+.subheader-btn-group img{
+    width: 30px;
+    height: 30px;
+}
+
+.btn-chat {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 4px;
+    color: #FA1E50;
+    background: #FFF;
+    border: solid 1px #FA3461;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-chat:hover {
+    color: #FA1E50;
+    background: #FEF4F6;
+}
+
+.btn-chat i {
+    width: 20px;
+    height: 20px;
+    background: url(./images/message.svg) no-repeat center/contain;
+    margin-right: 6px;
+}
+
+.btn-apply {
+    background: #fa1e50;
+    color: #fff;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    transition: all 0.2s;
+    font-weight: bold;
+}
+
+.btn-apply i {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background: url(./images/ic_apply_24_white.svg) no-repeat center/contain;
 }
 
 .job-title h1{
@@ -325,7 +375,6 @@ a {
 
 .job-card .job-favorite .btn {
     padding: 0;
-    z-index: 1;
 }
 
 .job-card .job-favorite i {
@@ -333,9 +382,6 @@ a {
     width: 24px;
     height: 24px;
     background: url(./images/ic_heart_off_darkblue20.svg) no-repeat center/contain;
-    position: relative;
-    top: 0;
-    z-index: 1;
 }
 
 
@@ -416,56 +462,7 @@ ul {
     align-items: center;
 }
 
-.btn-chat {
-    display: flex;
-    align-items: center;
-    padding: 10px 16px;
-    border-radius: 4px;
-    color: #FA1E50;
-    background: #FFF;
-    border: solid 1px #FA3461;
-    font-weight: bold;
-    font-size: 16px;
-    white-space: nowrap;
-    margin-right: 16px;
 
-}
-
-.btn-chat:hover {
-    color: #FA1E50;
-    background: #FEF4F6;
-}
-
-.btn-chat i {
-    width: 20px;
-    height: 20px;
-    background: url(./images/message.svg) no-repeat center/contain;
-    margin-right: 6px;
-}
-.subheader-btn-group{
-    position: relative;
-}
-
-
-.btn-apply {
-    background: #fa1e50;
-    color: #fff;
-    padding: 10px 16px;
-    font-size: 16px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    margin-top: 0px;
-    transition: all 0.2s;
-    font-weight: bold;
-}
-
-.btn-apply i {
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
-    background: url(./images/ic_apply_24_white.svg) no-repeat center/contain;
-}
 
 .company-group {
     display: flex;
