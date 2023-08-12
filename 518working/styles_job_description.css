@@ -9,7 +9,75 @@ a {
     color: #2369ff;
 }
 
-.job-header {
+.for-pc{
+    display: none;
+}
+
+.job-header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+.to-prev{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subheader-btn-group{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+}
+
+.company{
+   /* display: flex;
+   align-items: center; */
+}
+.company img{
+    width: 16px;
+}
+
+.chat-tooltip{
+    position: absolute;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+    padding: 10px 12px;
+    background-color: #2B3340;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+    bottom: -48px;
+    left:54.6px;
+    transform: translateX(-50%);
+    animation: chat-tooltip 1.5s 4;
+}
+
+@keyframes chat-tooltip {
+    0%, 50%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    25%, 75% {
+        transform: translateY(-4px) translateX(-50%);
+    }
+}
+
+.chat-tooltip::after{
+    content: "";
+    background-color: #2B3340;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 9px;
+    height: 7px;
+    top: -3px;
+    left: calc(50% - 5px);
+}
+
+/* .job-header {
     background-color: #fff;
 }
 
@@ -74,42 +142,7 @@ a {
 .subheader-btn-group{
     position: relative;
 }
-.chat-tooltip{
-    position: absolute;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 19px;
-    color: #fff;
-    padding: 10px 12px;
-    background-color: #2B3340;
-    border-radius: 4px;
-    white-space: nowrap;
-    z-index: 10;
-    bottom: -48px;
-    left:54.6px;
-    transform: translateX(-50%);
-    animation: chat-tooltip 1.5s 4;
-}
 
-@keyframes chat-tooltip {
-    0%, 50%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    25%, 75% {
-        transform: translateY(-4px) translateX(-50%);
-    }
-}
-
-.chat-tooltip::after{
-    content: "";
-    background-color: #2B3340;
-    transform: rotate(45deg);
-    position: absolute;
-    width: 9px;
-    height: 7px;
-    top: -3px;
-    left: calc(50% - 5px);
-}
 
 .btn-apply {
     background: #fa1e50;
@@ -502,13 +535,13 @@ a {
 .visited-records h4 span {
     font-size: 13px;
     color: #95999f;
-}
+} */
 
 
 
 
 /* boostrap */
-.btn-outline-danger {
+/* .btn-outline-danger {
     --bs-btn-color: #fa1e50;
     --bs-btn-border-color: #fa1e50;
     --bs-btn-hover-color: #fff;
@@ -596,4 +629,4 @@ a {
 ul {
     padding: 0;
     list-style-type: none;
-}
+} */
