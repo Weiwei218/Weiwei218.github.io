@@ -316,15 +316,15 @@ a {
     padding: 12px;
     border: 1px solid #E9EAEB;
 }
-.job-intro {
+.job-card .job-intro {
     width: 80%;
 }
 
-.job-intro>:nth-child(n+2):nth-child(-n+4) {
+.job-card .job-intro>:nth-child(n+2):nth-child(-n+4) {
     margin: 5px 0;
 }
 
-.job-title {
+.job-card .job-title {
     width: 100%;
     font-size: 18px;
     line-height: 1.5;
@@ -357,13 +357,13 @@ a {
     padding: 0 3px;
 }
 
-.job-tags {
+.job-card .job-tags {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 0;
 }
 
-.job-tags span{
+.job-card .job-tags span{
     font-size: 12px;
     color: #3CA8FF;
     background-color: #F4F7FF;
