@@ -283,6 +283,7 @@ header .dropdown-toggle::after {
         padding: 0;
         display: flex;
         justify-content: right;
+        align-items: center;
     }
 
     header .btn-close {
