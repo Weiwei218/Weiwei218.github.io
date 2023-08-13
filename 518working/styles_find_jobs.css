@@ -158,11 +158,15 @@ a {
     position: relative;
 }
 
+.for-sp #location-distance,
+.for-sp #job-category,
 .for-sp .advance-filters {
     display: flex;
     align-items: center;
 }
 
+.for-sp #location-distance span,
+.for-sp #job-category span,
 .for-sp .advance-filters span {
     font-size: 12px;
     margin-left: 3px;

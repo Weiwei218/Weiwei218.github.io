@@ -1,5 +1,5 @@
-header img ,
-footer img{
+header img,
+footer img {
     width: 100%;
     height: 100%;
     vertical-align: middle;
@@ -68,7 +68,7 @@ header .login-for-sp .material-symbols-outlined {
 header .nav-container {
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 100%;
 }
 
 header .navbar-toggler {
@@ -94,20 +94,44 @@ header .item-group .btn-close {
     color: #fff;
     background-image: url(./img/btn-close-white.svg) !important;
     opacity: 1;
+    margin-left: auto;
 }
 
-header .item-group .item-list {
+header .item-group {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    -ms-touch-action: none;
+    touch-action: none;
+    background-color: #ff7898;
+    opacity: 0;
+    transition: .3s;
+}
+header .item-group.show {
+    opacity: 1;
+}
+
+header .item-group::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     background: url(./img//img_menu_bg_activity@2x.png) no-repeat center;
-    -ms-touch-action: none;
-    touch-action: none;
     background-size: cover;
-    padding: 30px;
+    opacity: 0.5;
+}
+
+header .item-group .content{
+    position: relative;
     text-align: center;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    z-index: 3;
 }
 
 header .nav-item {
@@ -135,110 +159,77 @@ header .is-m .comp_img {
     height: fit-content;
 }
 
-header .member-list {
-    display: none;
-}
-
 header .comp_banner {
     display: none;
 }
+
+
 
 header .dropdown {
     list-style: none;
     display: block;
 }
 
-header .dropdown-item.active, 
-header .dropdown-item:active {
+header .dropdown-toggle:hover,
+header .dropdown-toggle:focus {
+    color: #fff;
+}
+
+header .dropdown-item.active,
+header .dropdown-item:active,
+header .dropdown-item:hover {
     text-decoration: none;
-    color: var(--bs-dropdown-link-hover-color);
-    background-color: var(--bs-dropdown-link-hover-bg);
+    background-color: transparent;
 }
 
 header .dropdown-toggle .icon {
     position: relative;
-    top: 6px;
+    top: 4px;
+    color: #ff0;
 }
 
 header .dropdown-menu {
-    border-radius: 0 !important;
+    border-radius: 10px;
+    background-color: #FA3461;
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 8px #88455c;
+}
+
+header .dropdown-menu .dropdown-item {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin-left: -10px;
+}
+
+header .nav-link.active,
+header .navbar-nav .nav-link.show {
+    color: #ffffff;
 }
 
 header .dropdown-menu li span {
     position: relative;
     top: 6px;
+    color: #ff0;
 }
 
 header .dropdown-toggle::after {
     content: "";
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     border-top: none;
     border-left: none;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 2px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
     position: relative;
     margin-left: 10px;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     top: -2px;
-}
-
-header .nav-item:hover .dropdown-toggle::after {
-    top: 2px !important;
-    -webkit-transform: rotate(225deg) !important;
-    transform: rotate(225deg) !important;
-}
-
-/* 手機版會員登入 */
-
-.header.modal-member {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100%;
-    display: none;
-    background: url(./img/menu_bg_member_circle@2x.png);
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-size: 100%;
-    background-position: top 158px center;
-}
-
-.header.modal-member .btn-close {
-    margin-left: auto;
-    font-size: 25px;
-}
-
-.header.modal-member .modal-content {
-    background-color: transparent;
-    border: none;
-    text-align: center;
-}
-
-.header.modal-member .member-type {
-    color: #232A35;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.header.modal-member ul {
-    padding: 0;
-    margin-bottom: 50px;
-}
-
-.header.modal-member .nav-link {
-    color: #000;
-    font-size: 16px;
-    font-weight: normal;
 }
 
 /* --- 電腦版 --- */
@@ -282,7 +273,26 @@ header .nav-item:hover .dropdown-toggle::after {
         background-color: transparent;
     }
 
-    header .item-group .item-list {
+    header .item-group::after {
+        content: "";
+        display: none;
+    }
+    
+    header .item-group .content{
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: initial;
+        padding: 0;
+        display: flex;
+        justify-content: right;
+    }
+
+    header .btn-close {
+        display: none;
+    }
+
+    header .item-group {
         position: initial;
         width: initial;
         height: initial;
@@ -290,6 +300,11 @@ header .nav-item:hover .dropdown-toggle::after {
         background: none;
         padding: 0;
         text-align: center;
+        opacity: 1;
+    }
+
+    header .member-list ul {
+        margin-left: 1.5rem;
     }
 
     header .nav-item {
@@ -317,7 +332,6 @@ header .nav-item:hover .dropdown-toggle::after {
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
         bottom: 28px;
-        -webkit-animation: slide-in-fwd-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both, float-loop-center 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s infinite;
         animation: slide-in-fwd-bottom 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both, float-loop-center 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s infinite;
     }
 
@@ -330,8 +344,56 @@ header .nav-item:hover .dropdown-toggle::after {
         border-left: 1px solid #E3E8F0;
     }
 
-}
+    header .dropdown-toggle .icon {
+        position: relative;
+        top: 6px;
+        color: #ccc;
+        font-size: 22px;
+        position: relative;
+        top: 3px;
+    }
 
+    header .dropdown-menu {
+        border-radius: 0 !important;
+        color: var(--bs-dropdown-link-color);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    header .dropdown-menu .dropdown-item {
+        color: var(--bs-dropdown-link-color);
+        font-size: 14px;
+        text-align: left;
+        margin-left: 0px;
+    }
+
+    header .dropdown-item.active,
+    header .dropdown-item:active {
+        text-decoration: none;
+        color: var(--bs-dropdown-link-hover-color);
+        background-color: var(--bs-dropdown-link-hover-bg);
+    }
+
+    header .dropdown-menu li span {
+        position: relative;
+        top: 6px;
+        color: #ccc;
+    }
+
+    header .nav-item:hover .dropdown-toggle::after {
+        top: 2px !important;
+        -webkit-transform: rotate(225deg) !important;
+        transform: rotate(225deg) !important;
+    }
+    header .dropdown-toggle::after {
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+}
 
 /* ---------------footer------------------ */
 footer {
@@ -369,6 +431,10 @@ footer .footer-box .logo-img {
     top: 5px;
     width: 120px;
     height: initial;
+}
+
+footer .footer-box a {
+    color: #404753;
 }
 
 footer .media-img {
