@@ -10,22 +10,6 @@ body {
     font: normal normal 14px Verdana, Arial, '新微軟正黑體', Helvetica, sans-serif;
 }
 
-header img {
-    width: 18px;
-    height: 18px;
-}
-
-.login-for-sp1 {
-    /* display: inline-block;
-    width: 24px;
-    height: 24px;
-    background: url(./images/ic_member.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center; */
-    /* position: relative; */
-}
-
 a {
     text-decoration: none;
 }
@@ -287,7 +271,7 @@ a {
     margin-bottom: 0;
 }
 
-.job-tags span{
+.job-tags span {
     font-size: 12px;
     color: #3CA8FF;
     background-color: #F4F7FF;
@@ -386,7 +370,7 @@ a {
         display: block;
     }
 
-    header img{
+    header img {
         width: 100%;
     }
 
@@ -479,15 +463,17 @@ a {
     .search-bar .search-input input:focus {
         box-shadow: none;
     }
-    .search-bar>:last-child{
+
+    .search-bar>:last-child {
         position: relative;
         left: calc(8.333% - 32px);
     }
+
     .search-bar button {
         width: 137px;
         height: 46px;
         position: relative;
-       
+
     }
 
     .top-section-mascot {
@@ -676,15 +662,15 @@ a {
         color: #95999F;
         margin: 0;
     }
-    
-    .search-result-header .order-by{
+
+    .search-result-header .order-by {
         display: flex;
         align-items: center;
         font-size: 16px;
     }
 
-    .search-result-header .order-by .btn{
-        
+    .search-result-header .order-by .btn {
+
         font-size: 16px;
         margin-right: 10px;
     }
@@ -840,6 +826,7 @@ a {
     .job-card:hover .job-apply .btn {
         transition: none;
     }
+
     .job-card .job-apply .btn {
         transition: none;
     }
@@ -884,7 +871,7 @@ a {
         padding: 1px 6px;
         margin: 10px 10px 0 0;
     }
-    
+
     .job-favorite i {
         display: inline-block;
         width: 24px;
@@ -898,18 +885,18 @@ a {
     }
 
 
-    .job-apply.for-pc{
+    .job-apply.for-pc {
         display: block;
     }
 
-    .job-apply i{
+    .job-apply i {
         background: url(./images/ic_apply_pinkred700.svg) no-repeat center/contain;
         width: 18px;
         height: 18px;
         margin-right: 6px;
     }
 
-    .job-card:hover .job-apply i{
+    .job-card:hover .job-apply i {
         background: url(./images/ic_apply_24_white.svg) no-repeat center/contain;
     }
 
@@ -921,7 +908,7 @@ a {
         height: 400px;
     }
 
-    .fast-filters{
+    .fast-filters {
         margin-top: 22px;
         font-size: 16px;
         font-weight: 700;
