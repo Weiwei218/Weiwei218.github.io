@@ -380,7 +380,7 @@ a {
     }
 
     header .navbar {
-        padding: 8px 52px 40px 52px;
+        padding: 8px 52px 20px 52px;
     }
 
     header .nav-item {
@@ -496,12 +496,16 @@ a {
         --bs-modal-width: 450px;
     }
 
+    .search-header{
+        background-color: #fff;
+    }
+
 
     .search-group {
         max-width: 1296px;
         margin: auto;
-        padding: 0 64px;
-        background-color: #fff;
+        padding: 20px 64px 0 64px;
+       
     }
 
     .search-header:after {
@@ -907,7 +911,7 @@ a {
 
     .fast-filters-and-map {
         position: sticky;
-        top: 132px;
+        top: 152px;
         width: 20%;
         min-width: 250px;
         height: 400px;

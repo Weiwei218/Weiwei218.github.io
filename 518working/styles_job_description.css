@@ -524,7 +524,14 @@ ul {
     header .navbar.for-pc {
         max-width: 1296px;
         padding: 0 64px;
-        margin: 30px auto;
+        margin: 10px auto;
+    }
+
+    .job-header{
+        position: sticky;
+        background: #fff;
+        top: 0;
+        z-index: 1020;
     }
 
     .job-header:after {
@@ -537,8 +544,9 @@ ul {
 
     .job-header .job-header-container {
         max-width: 1296px;
-        padding: 0 76px;
+        padding: 20px 76px 10px 76px;
         margin: auto;
+
     }
 
     .job-title-group {
@@ -567,7 +575,6 @@ ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 16px;
     }
 
     .company {
