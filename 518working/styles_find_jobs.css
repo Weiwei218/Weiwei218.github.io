@@ -360,6 +360,11 @@ a {
     border-style: dotted;
 }
 
+/* bootstrap */
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    border-color: transparent;
+}
+
 @media (min-width:1200px) {
 
     .for-sp {
