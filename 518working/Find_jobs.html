@@ -214,13 +214,13 @@
     </div> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="advModal-sp" tabindex="-1" aria-labelledby="advModal-spLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <div class="modal-header">
 
-                    <h1 class="modal-title fs-5" id="exampleModal1Label">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="advModal-spLabel">Modal title</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="position: relative;">
@@ -330,7 +330,7 @@
                                 職務類別<span>1</span>
                             </div>
                             <div class="advance-filters" id="modal-trigger" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal1">
+                                data-bs-target="#advModal-sp">
                                 進階<span>1</span>
                                 <img src="./images/ic_filter_white700.svg" alt="">
                             </div>
@@ -2016,9 +2016,9 @@
         //     target: '#navbar-example'
         // })
 
-        const MyModal = document.getElementById("exampleModal1")
-        MyModal.addEventListener('shown.bs.modal', () => {
-            const scrollElem = MyModal.querySelector(`[data-bs-spy="scroll"]`)
+        const advModalSp = document.getElementById("advModal-sp")
+        advModalSp.addEventListener('shown.bs.modal', () => {
+            const scrollElem = advModalSp.querySelector(`[data-bs-spy="scroll"]`)
             bootstrap.ScrollSpy.getOrCreateInstance(scrollElem).refresh()
         })
 
