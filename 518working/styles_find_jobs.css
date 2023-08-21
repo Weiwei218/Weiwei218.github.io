@@ -412,6 +412,10 @@ a {
     align-items: center;
     margin: -8px 0 20px 0;
 }
+#advModal-sp .form-control:focus{
+    border-color: #dee2e6;
+    box-shadow: none;
+}
 #advModal-sp .form-select-industry{
     margin-bottom: 20px;
 }
@@ -433,6 +437,9 @@ a {
 #advModal-sp .modal-footer>:first-child:focus {
     background: #fef4f6;
     color: #e01a47;
+}
+#advModal-sp .modal-footer>:first-child:active {
+    border-color: #dc3545;
 }
 
 #advModal-sp .modal-footer>:nth-child(2) {
