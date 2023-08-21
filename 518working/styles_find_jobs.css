@@ -361,21 +361,23 @@ a {
     border-style: dotted;
 }
 
-#advModal-sp .subtitle-group{
+#advModal-sp .subtitle-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
-#advModal-sp .subtitle-group h4{
+
+#advModal-sp .subtitle-group h4 {
     margin: 0;
     font-size: 16px;
 }
 
-#advModal-sp .subtitle-group h4 span{
+#advModal-sp .subtitle-group h4 span {
     font-size: 12px;
 }
-#advModal-sp .subtitle-group .btn{
+
+#advModal-sp .subtitle-group .btn {
     padding: 0;
     font-size: 14px;
 }
@@ -393,13 +395,15 @@ a {
     gap: 12px;
     margin-bottom: 20px;
 }
-#advModal-sp [class^="btn-group-"] label{
+
+#advModal-sp [class^="btn-group-"] label {
     font-size: 14px;
     padding: 10px 0;
     border: 1px solid #f2f5f9;
     background-color: #ebeff5;
 }
-#advModal-sp [class^="btn-group-"] input:checked+label{
+
+#advModal-sp [class^="btn-group-"] input:checked+label {
     font-size: 14px;
     padding: 10px 0;
     border: 1px solid #bdd2ff;
@@ -407,23 +411,27 @@ a {
     background-color: #e9f0ff;
 }
 
-#advModal-sp .input-salary-range{
+#advModal-sp .input-salary-range {
     display: flex;
     align-items: center;
     margin: -8px 0 20px 0;
 }
-#advModal-sp .form-control:focus{
+
+#advModal-sp .form-control:focus {
     border-color: #dee2e6;
     box-shadow: none;
 }
-#advModal-sp .form-select-industry{
+
+#advModal-sp .form-select-industry {
     margin-bottom: 20px;
 }
-#advModal-sp .form-select-industry:focus{
+
+#advModal-sp .form-select-industry:focus {
     border-color: #dee2e6;
     box-shadow: none;
 }
-#advModal-sp .form-control-exclude:focus{
+
+#advModal-sp .form-control-exclude:focus {
     border-color: #dee2e6;
     box-shadow: none;
 }
@@ -438,6 +446,7 @@ a {
     background: #fef4f6;
     color: #e01a47;
 }
+
 #advModal-sp .modal-footer>:first-child:active {
     border-color: #dc3545;
 }
@@ -448,32 +457,73 @@ a {
     border-radius: 4px;
 }
 
+#subscribeModal img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(-1);
+    top: -104px;
+}
 
+#subscribeModal .modal-content {
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#subscribeModal .btn-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#subscribeModal .modal-header {
+    border-bottom: transparent;
+}
+
+#subscribeModal .modal-body {
+    padding: 0;
+}
+
+#subscribeModal .modal-body p,
+#subscribeModal .modal-body input {
+    margin-bottom: 1em;
+}
+
+#subscribeModal .modal-body button {
+    width: 100%;
+}
+
+#subscribeModal .modal-footer {
+    text-align: left;
+    border-top: transparent;
+}
 
 
 
 /* bootstrap */
 
 .btn:first-child:active,
-.btn.show
- {
+.btn.show {
     border-color: transparent;
 }
 
-.btn-outline-danger{
+.btn-outline-danger {
     /* color: #fa1e50;
     background: #fff;
     border: solid 1px #fa3461; */
 }
+
 .btn-outline-danger {
     --bs-btn-color: #fa1e50;
     --bs-btn-border-color: #fa1e50;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #fa1e50;
-    --bs-btn-hover-border-color: #fa1e50;
+    --bs-btn-hover-color: #e01a47;
+    --bs-btn-hover-bg: #fef4f6;
+    ;
+    --bs-btn-hover-border-color: #e01a47;
     --bs-btn-focus-shadow-rgb: 220, 53, 69;
     --bs-btn-active-color: #fa1e50;
-    --bs-btn-active-bg: #fef4f6;;
+    --bs-btn-active-bg: #fef4f6;
+    ;
     --bs-btn-active-border-color: #fa1e50;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fa1e50;
@@ -481,7 +531,8 @@ a {
     --bs-btn-disabled-border-color: #fa1e50;
     --bs-gradient: none;
 }
-.btn-danger{
+
+.btn-danger {
     color: #fff;
     background: #fa1e50;
     border: solid 1px #fa1e50;
@@ -491,7 +542,7 @@ a {
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #fb6184;
     --bs-btn-hover-border-color: #fb6184;
-    --bs-btn-focus-shadow-rgb: 225,83,97;
+    --bs-btn-focus-shadow-rgb: 225, 83, 97;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #fb6184;
     --bs-btn-active-border-color: #fb6184;
@@ -501,7 +552,7 @@ a {
     --bs-btn-disabled-border-color: #fa1e50;
 }
 
-.btn-danger:focus{
+.btn-danger:focus {
     background: #fb6184;
     border: solid 1px #fb6184;
 }
@@ -1271,8 +1322,9 @@ a {
         background: #fef4f6;
         color: #e01a47;
     }
+
     .offcanvas-adv .modal-footer>:first-child:active {
-       border-color: #fa1e50;
+        border-color: #fa1e50;
     }
 
     .offcanvas-adv .modal-footer>:nth-child(2) {
