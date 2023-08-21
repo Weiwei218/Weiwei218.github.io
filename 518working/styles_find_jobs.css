@@ -361,6 +361,90 @@ a {
     border-style: dotted;
 }
 
+#advModal-sp .subtitle-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#advModal-sp .subtitle-group h4{
+    margin: 0;
+    font-size: 16px;
+}
+
+#advModal-sp .subtitle-group h4 span{
+    font-size: 12px;
+}
+#advModal-sp .subtitle-group .btn{
+    padding: 0;
+    font-size: 14px;
+}
+
+#advModal-sp .btn-group-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#advModal-sp .btn-group-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+#advModal-sp [class^="btn-group-"] label{
+    font-size: 14px;
+    padding: 10px 0;
+    border: 1px solid #f2f5f9;
+    background-color: #ebeff5;
+}
+#advModal-sp [class^="btn-group-"] input:checked+label{
+    font-size: 14px;
+    padding: 10px 0;
+    border: 1px solid #bdd2ff;
+    color: #2369ff;
+    background-color: #e9f0ff;
+}
+
+#advModal-sp .input-salary-range{
+    display: flex;
+    align-items: center;
+    margin: -8px 0 20px 0;
+}
+#advModal-sp .form-select-industry{
+    margin-bottom: 20px;
+}
+#advModal-sp .form-select-industry:focus{
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+#advModal-sp .form-control-exclude:focus{
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
+#advModal-sp .modal-footer>:first-child {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+#advModal-sp .modal-footer>:first-child:focus {
+    background: #fef4f6;
+    color: #e01a47;
+}
+
+#advModal-sp .modal-footer>:nth-child(2) {
+    flex: 2;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+
+
+
+
 /* bootstrap */
 .btn-check:checked+.btn,
 .btn.active,

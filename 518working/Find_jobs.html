@@ -146,7 +146,6 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-
                     <h1 class="modal-title fs-5" id="advModal-spLabel">進階篩選</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -216,17 +215,186 @@
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div> -->
-            
+
                 <div class="modal-body">
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-                    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus laboriosam ratione perferendis nobis enim sequi dolor eum in libero. Molestias quam in fugit at repudiandae facilis officiis a optio?</div>
-     
-                  </div>
+                    <div class="subtitle-group">
+                        <h4>更新日期<span>(單選)</span></h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+
+                    <div class="btn-group-2col">
+                        <input type="radio" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">本日最新</label>
+
+                        <input type="radio" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">三日內</label>
+
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>職務性質<span>(單選)</span></h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-3col">
+                        <input type="radio" class="btn-check" id="btncheck1011" autocomplete="off">
+                        <label class="btn" for="btncheck1011">全職</label>
+
+                        <input type="raio" class="btn-check" id="btncheck102" autocomplete="off">
+                        <label class="btn" for="btncheck102">兼職</label>
+
+                        <input type="radio" class="btn-check" id="btncheck120" autocomplete="off">
+                        <label class="btn" for="btncheck120">打工</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>薪資待遇</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-3col">
+                        <input type="raio" class="btn-check" id="btncheck102" autocomplete="off">
+                        <label class="btn" for="btncheck102">時薪</label>
+
+
+                        <input type="radio" class="btn-check" id="btncheck120" autocomplete="off">
+                        <label class="btn" for="btncheck120">月薪</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">包含面議</label>
+
+                        
+                    </div>
+                    <div class="input-salary-range">
+                        <input type="text" class="form-control" placeholder="如28000">
+                        <span class="mx-2">-</span>
+                        <input type="text" class="form-control" placeholder="選填">
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>上班班別</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-3col">
+                        <input type="checkbox" class="btn-check" id="btncheck1133" autocomplete="off">
+                        <label class="btn" for="btncheck1133">日班</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">晚班</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">大夜班</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">假日班</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>工作經驗</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-3col">
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">無經驗可</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">1-3年</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">3年以上</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>產業類別</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <select class="form-select form-select-industry" aria-label="">
+                        <option selected>請選擇產業類別</option>
+                        <option value="1">餐飲／旅遊 ／美容美髮類</option>
+                        <option value="2">資訊軟體系統類</option>
+                        <option value="3">客服／門市／業務／貿易類</option>
+                        <option value="4">操作／技術／維修類</option>
+                        <option value="5">醫療/保健服務類</option>
+                    </select>
+
+                    <div class="subtitle-group">
+                        <h4>職缺特色</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-2col">
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">交通津貼</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">伙食津貼</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">週休二日</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">無須輪班</label>
+                        <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">彈性上下班</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">國外駐點工作</label>
+
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>管理責任<span>(單選)</span></h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-2col">
+                        <input type="radio" class="btn-check" id="btncheck11" autocomplete="off">
+                        <label class="btn" for="btncheck11">有</label>
+
+                        <input type="radio" class="btn-check" id="btncheck12" autocomplete="off">
+                        <label class="btn" for="btncheck12">無</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>學歷限制</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-3col">
+
+                        <input type="checkbox" class="btn-check" id="btncheck19" autocomplete="off">
+                        <label class="btn" for="btncheck19">高中</label>
+                        <input type="checkbox" class="btn-check" id="btncheck20" autocomplete="off">
+                        <label class="btn" for="btncheck20">專科</label>
+                        <input type="checkbox" class="btn-check" id="btncheck21" autocomplete="off">
+                        <label class="btn" for="btncheck21">大學</label>
+                        <input type="checkbox" class="btn-check" id="btncheck22" autocomplete="off">
+                        <label class="btn" for="btncheck22">研究所</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>公司特色</h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <div class="btn-group-2col">
+                        <input type="checkbox" class="btn-check" id="btncheck27" autocomplete="off">
+                        <label class="btn" for="btncheck27">上市櫃公司</label>
+                        <input type="checkbox" class="btn-check" id="btncheck28" autocomplete="off">
+                        <label class="btn" for="btncheck28">外商公司</label>
+                        <input type="checkbox" class="btn-check" id="btncheck29" autocomplete="off">
+                        <label class="btn" for="btncheck29">進修補助</label>
+                        <input type="checkbox" class="btn-check" id="btncheck30" autocomplete="off">
+                        <label class="btn" for="btncheck30">員購優惠</label>
+                    </div>
+
+                    <div class="subtitle-group">
+                        <h4>排除條件</span></h4>
+                        <button type="button" class="btn">清除</button>
+                    </div>
+                    <input type="text" class="form-control form-control-exclude" placeholder="以 , 區隔，例如：保險,派遣" aria-label="exclude-company"
+                        aria-describedby="basic-addon1">
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger">清除</button>
+                    <button type="button" class="btn btn-danger">確定送出(0)</button>
+                </div>
             </div>
         </div>
 
@@ -511,7 +679,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    1年以上
+                                    1-3年
                                 </label>
                             </div>
                             <div class="form-check">
@@ -1636,7 +1804,7 @@
                                 <option value="3">客服／門市／業務／貿易類</option>
                                 <option value="4">操作／技術／維修類</option>
                                 <option value="5">醫療/保健服務類</option>
-                              </select>
+                            </select>
 
                             <h5>公司特色</h5>
                             <div class="btn-group-2col">
@@ -1661,7 +1829,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-outline-danger">清除</button>
-            <button type="button" class="btn btn-danger">確認送出(1/5)</button>
+            <button type="button" class="btn btn-danger">確認送出(0)</button>
         </div>
     </div>
 
